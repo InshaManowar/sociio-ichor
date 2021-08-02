@@ -1,0 +1,95 @@
+{% extends 'home/base.html' %}
+{% load static %}
+{% load social_share %}
+{% block head %}
+    <title> Details | Sociio Ichor</title>
+    <style>
+        .ichor-details{
+            margin-top: 15%;
+            background-color: white; 
+            margin-bottom: 10%;
+            border-radius: 4px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .ichor-details .img{
+            width: 100%;
+        }
+
+        .btn-sm-2{
+            width: 30%;
+        }
+      
+        @media only screen and (max-width: 768px){
+            .ichor-details{
+                width: 90%;
+                margin-top: 35%;
+            }
+            .img img{
+                width: 200px !important;
+            }
+            .btn-sm-2{
+                width: 100px;
+            }
+        }
+    </style>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container ichor-details">
+    <div class="row">
+        <div class="col-lg-3 img text-center">
+            <img src="https://conference.manipal.edu/clinifest2018/IMAGES_NEW/MU_logo.jpg" width="80%" style="margin-top: 15%;" alt="logo">
+
+        </div>
+        <div class="col-lg-9 text-center my-5">
+                <p class="kmc-blood-item"><span><b>Blood Group - </b>{{ blood.blood_group }}</span></p>
+                <p class="kmc-blood-item"><span><b>Blood Type - </b>{{ blood.blood_type }}</span></p>
+                <p class="kmc-blood-item"><span><b>Units required - </b>{{ blood.units }}</span></p>
+                <p class="kmc-blood-item"><span><b>Acceptable Blood Groups - </b>{{ blood.acceptable_blood_group }}</span></p>
+                <p class="kmc-blood-item" style="padding:3%; padding-left: 13%;">{{ blood.note }}</p>
+
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+    Share now
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Share</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          
+            <span class="ichor-share-link ">{% post_to_whatsapp object_or_url 'WhatsApp' %}</span>
+            <span class="ichor-share-link">{% post_to_twitter object_or_url 'Twitter' %}</span>
+            <span class="ichor-share-link">{% post_to_facebook object_or_url 'Facebook' %}</span>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+            
+                <a href="tel:{{ blood.phone }}" class="btn btn-sm-2 btn-outline-danger"> Contact</a>
+    
+              
+        </div>
+
+            
+
+    </div>    
+    </div>
+    
+
+{% endblock content %}
+    
+    
