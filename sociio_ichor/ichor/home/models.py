@@ -4,6 +4,16 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 from django.db.models.signals import post_delete
 from django.dispatch import receiver
+
+STATUS_DRAFT = 0
+STATUS_PUBLISH = 1
+
+STATUS = (
+    (STATUS_DRAFT, "Draft"),
+    (STATUS_PUBLISH, "Publish")
+)
+
+
 BG_CHOICES = (
     ('A+','A+'),
     ('B+','B+'),
@@ -29,7 +39,6 @@ TYPE=(
 # Create your models here.
 class BloodRequest(models.Model):
     blood_request_id = models.AutoField(primary_key=True)
-    name = models.CharField(null=True, max_length=20, default='a')
     time_stamp = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=400, unique=True, default=None)
     blood_group = models.CharField(
@@ -41,10 +50,13 @@ class BloodRequest(models.Model):
     acceptable_blood_group = models.CharField(max_length = 100, blank=False )
     Phone = models.CharField(max_length=10, default='')
     units = models.CharField(max_length=5)
-    note = models.TextField(default=None, blank=True, null=True)
-
+    note = models.TextField(default='', blank=True, null=True)
+    address = models.TextField(default='', blank=True, null=True)
+    hospital_initials = models.CharField(default='KMC', blank=False, null=False, max_length=50 )
+    status = models.IntegerField(choices=STATUS, default=0)
+    
     class Meta:
-        verbose_name = 'Blood Requests'
+        verbose_name = 'Blood Request'
     
     
 def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):

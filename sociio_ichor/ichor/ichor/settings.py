@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     
    'home',
    'django_social_share',
+   'django_summernote',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,4 @@ MEDIA_URL = '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'

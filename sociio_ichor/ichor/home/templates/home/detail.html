@@ -9,11 +9,13 @@
             background-color: white; 
             margin-bottom: 10%;
             border-radius: 4px;
+            width: 100%;
             box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
         }
 
         .ichor-details .img{
-            width: 100%;
+            width: 120%;
+            margin-top: 3%;
         }
 
         .btn-sm-2{
@@ -31,28 +33,46 @@
             .btn-sm-2{
                 width: 100px;
             }
+            .ichor-guide{
+                margin-top: 0.5%;
+            }
         }
+       .ichor-guide{
+           margin-top: 5%;
+       }
     </style>
 {% endblock head %}
 
 
 {% block content %}
-    <div class="container ichor-details">
+    <div class="container ichor-details ">
     <div class="row">
         <div class="col-lg-3 img text-center">
-            <img src="https://conference.manipal.edu/clinifest2018/IMAGES_NEW/MU_logo.jpg" width="80%" style="margin-top: 15%;" alt="logo">
+            <img src="{% static 'home/logox.png' %}" width="80%" style="margin-top: 15%;" alt="logo">
 
         </div>
-        <div class="col-lg-9 text-center my-5">
+        <div class="col-lg-4 my-5">
+            <p class="text-muted">Posted on -{{ blood.time_stamp }} <br> ID: {{ blood.blood_request_id }}</p>
                 <p class="kmc-blood-item"><span><b>Blood Group - </b>{{ blood.blood_group }}</span></p>
+                <p class="kmc-blood-item"><span><b>Acceptable Blood Groups - </b>{{ blood.acceptable_blood_group }}</span></p>
+
                 <p class="kmc-blood-item"><span><b>Blood Type - </b>{{ blood.blood_type }}</span></p>
                 <p class="kmc-blood-item"><span><b>Units required - </b>{{ blood.units }}</span></p>
-                <p class="kmc-blood-item"><span><b>Acceptable Blood Groups - </b>{{ blood.acceptable_blood_group }}</span></p>
-                <p class="kmc-blood-item" style="padding:3%; padding-left: 13%;">{{ blood.note }}</p>
+                
+                {% if blood.address %}
+                <p class="kmc-blood-item"><span><b>Hospital Address - </b>{{ blood.address }}</span></p>
+
+                {% endif %}
+                
+                {% if blood.note %}
+                <p class="kmc-blood-item"></p> Note : {{ blood.note }}</p>
+
+                {% endif %}
+                    
 
                 <!-- Button trigger modal -->
-<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
-    Share now
+<button type="button" class="btn btn-success my-3" data-toggle="modal" data-target="#exampleModalCenter">
+    Share
   </button>
   
   <!-- Modal -->
@@ -70,6 +90,7 @@
             <span class="ichor-share-link ">{% post_to_whatsapp object_or_url 'WhatsApp' %}</span>
             <span class="ichor-share-link">{% post_to_twitter object_or_url 'Twitter' %}</span>
             <span class="ichor-share-link">{% post_to_facebook object_or_url 'Facebook' %}</span>
+            <button class="btn btn-secondary" type="button" onclick="getURL();">Get Page URL</button>
 
         </div>
         <div class="modal-footer">
@@ -78,17 +99,53 @@
       </div>
     </div>
   </div>
-            
-                <a href="tel:{{ blood.phone }}" class="btn btn-sm-2 btn-outline-danger"> Contact</a>
-    
-              
+                <!-- Button trigger modal -->
+<button type="button" class="btn btn-success my-3" data-toggle="modal" data-target="#exampleModalCenter2">
+    Donate
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Contact us</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
+        <div class="modal-body">
+          
+            <span class="ichor-share-link "> <a href="tel:{{ blood.phone }}"> Call us on - {{ blood.Phone }}</a></span>
+           
 
-            
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+            <div class="col-lg-5 py-2 ichor-guide">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, cupiditate possimus. Consectetur quod autem eum, laboriosam pariatur adipisci sit deserunt.
+                 Earum veniam vel vero vitae placeat necessitatibus consectetur sapiente odit, rerum molestias accusamus ea repellat autem, officia totam at quam porro sequi. Consequuntur eveniet, beatae sunt laboriosam deserunt quisquam corrupti?</p>
+                 <a href="#">Read more</a>
+            </div>
+
 
     </div>    
     </div>
     
+    {% block script %}
+
+    <script>
+        function getURL() {
+    alert("Copy : " + window.location.href);
+}
+    </script>
+        
+    {% endblock script %}
+        
 
 {% endblock content %}
     

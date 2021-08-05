@@ -7,8 +7,12 @@ from django.conf import settings
 
 from django.conf.urls.static import static
 
+admin.site.site_header = 'Sociio Ichor'
+admin.site_site_title = 'Sociio Ichor'
+admin.site.index_title = 'Sociio Ichor Administration'
 
 urlpatterns = [
+    path('editor/', include ('django_summernote.urls')),
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')),
 ]

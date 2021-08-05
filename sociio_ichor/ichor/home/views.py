@@ -8,6 +8,7 @@ from django.views import generic
 from django.shortcuts import render,get_object_or_404
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
+from .models import STATUS_PUBLISH
 
 from django.db.models import Q
 
@@ -16,7 +17,7 @@ from django.db.models import Q
 class BloodListView(ListView):
     model=BloodRequest
     template_name = 'home/home.html'
-    queryset=BloodRequest.objects.all()
+    queryset=BloodRequest.objects.filter(status=STATUS_PUBLISH)
     context_object_name='blood'
      
 
@@ -27,7 +28,7 @@ class BloodSearchView(ListView):
     
     def get_queryset(self):
         query=self.request.GET.get('q')
-        return BloodRequest.objects.filter(blood_group__icontains=query)
+        return BloodRequest.objects.filter(blood_group__icontains=query, status=STATUS_PUBLISH)
     
 
 class BloodDetailView(DetailView):
@@ -41,6 +42,9 @@ def detail_view(request, name_slug):
     
 def about(request):
     return render(request, 'home/about.html')
+
+#def landing(request):
+#    return render(request, 'home/land.html')
 
 
 
