@@ -39,9 +39,11 @@
                 class="mb-5"
                 method="post"
                 id="contactForm"
-                name="contactForm"
-              >
-                {% csrf_token %} {{ contact_form.non_field_errors }} {{contact_form.source.errors }} {{ contact_form.source }}
+                name="contactForm">
+                {% csrf_token %} 
+                {{ contact_form.non_field_errors }} 
+                {{ contact_form.source.errors }} 
+                {{ contact_form.source }}
 
                 <div class="row ichor-contact-form">
                   <div class="col-md-6 form-group mb-5">
@@ -49,8 +51,7 @@
                       for="{{ contact_form.name.name}}"
                       id="name"
                       class="col-form-label"
-                      >Name *</label
-                    >
+                      >Name *</label>
                     {{ contact_form.name }}
                   </div>
                   <div class="col-md-6 form-group mb-5">
@@ -58,8 +59,7 @@
                       for="{{ contact_form.email_address.email}}"
                       id="email"
                       class="col-form-label"
-                      >Email *</label
-                    >
+                      >Email *</label>
                     {{ contact_form.email_address }}
                   </div>
                 </div>
@@ -79,8 +79,7 @@
                       for="{{ contact_form.company.company}}"
                       id="company"
                       class="col-form-label"
-                      >Company</label
-                    >
+                      >Company</label>
                     {{ contact_form.company }}
                   </div>
                 </div>
