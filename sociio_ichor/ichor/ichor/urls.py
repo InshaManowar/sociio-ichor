@@ -14,7 +14,9 @@ admin.site.index_title = 'Sociio Ichor Administration'
 urlpatterns = [
     path('editor/', include ('django_summernote.urls')),
     path('admin/', admin.site.urls),
-    path('home/', include('home.urls')),
+    path('', include('home.urls')),
+    path('', include('team.urls'))
+    
 ]
 
 if settings.DEBUG:

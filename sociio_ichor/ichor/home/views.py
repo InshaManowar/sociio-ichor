@@ -43,8 +43,13 @@ def detail_view(request, name_slug):
 def about(request):
     return render(request, 'home/about.html')
 
-#def landing(request):
-#    return render(request, 'home/land.html')
+
+
+def landing(request):
+    return render(request, 'home/land.html')
+
+def privacy(request):
+    return render(request, 'home/privacy.html')
 
 
 

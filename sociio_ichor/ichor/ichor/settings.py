@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #my-apps
     
    'home',
+   'team',
    'django_social_share',
    'django_summernote',
 ]

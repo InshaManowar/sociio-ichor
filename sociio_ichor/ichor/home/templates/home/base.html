@@ -21,7 +21,7 @@
 				<div class="col-12">
 					<nav class="navbar navbar-expand-md navbar-dark">
 					
-						<a class="navbar-brand" href="{% url 'home:donate' %}" target="_blank"><img src="{% static 'home/ichor.png' %}" alt="logo"></a>	
+						<a class="navbar-brand" href="{% url 'home:land' %}" target="_blank"><img src="{% static 'home/ichor.png' %}" alt="logo"></a>	
 						
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
@@ -40,7 +40,7 @@
 									<a class="nav-link" href="{% url 'home:contact' %}">Contact</a>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link" href="#">Our Team</a>
+									<a class="nav-link" href="{% url 'team:team' %}">Our Team</a>
 								</li>
 							</ul>
 						</div>
@@ -78,8 +78,10 @@
               <h6>Quick Links</h6>
               <ul class="footer-links">
                 <li><a href="{% url 'home:about' %}">About Us</a></li>
+                <li><a href="{% url 'home:land' %}">Home</a></li>
                 <li><a href="{% url 'home:donate' %}">Donate Blood</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+
+                <li><a href="{% url 'home:privacy' %}">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
@@ -89,7 +91,7 @@
           <div class="row">
             <div class="col-md-8 col-sm-6 col-xs-12">
               <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by 
-           <a href="#">Sociio Ichor</a>.
+           <a href="{% url 'home:land' %}">Sociio Ichor</a>.
               </p>
             </div>
   

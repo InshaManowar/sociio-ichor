@@ -9,6 +9,7 @@ urlpatterns = [
     path('search-blood/', views.BloodSearchView.as_view(), name='search-blood'),
     path('detail/<slug:name_slug>/', views.detail_view , name='details'),
     path('about/', views.about, name='about'),
-    #path('', views.landing, name='land'),
-    path('contactus/', views.contactus, name = 'contact')
+    path('contactus/', views.contactus, name = 'contact'),
+    path('land/', views.landing, name='land'),
+    path('policy/', views.privacy, name='privacy')
 ]

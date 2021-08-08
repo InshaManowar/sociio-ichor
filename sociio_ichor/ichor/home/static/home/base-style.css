@@ -896,7 +896,7 @@ position: relative;
 }
 .site-footer a:hover
 {
-  color:#3366cc;
+  color:#f81184;
   text-decoration:none;
 }
 .footer-links
@@ -914,7 +914,7 @@ position: relative;
 }
 .footer-links a:active,.footer-links a:focus,.footer-links a:hover
 {
-  color:#3366cc;
+  color:#ec0264;
   text-decoration:none;
 }
 .footer-links.inline li
