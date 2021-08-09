@@ -73,7 +73,7 @@ def contactus(request):
                 send_mail(subject, message, recepient, ['ayurvedproctologyassociation@gmail.com']) 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return redirect ("home:land")
+            return redirect ("home:donate")
     
     form = ContactForm(request.POST)
     return render(request, "home/contactus.html", {'contact_form':form})
