@@ -70,7 +70,7 @@ def contactus(request):
             recepient = str(form['email_address'].value())
 
             try:
-                send_mail(subject, message, recepient, ['ayurvedproctologyassociation@gmail.com']) 
+                send_mail(subject, message, recepient, ['sociio.organisation@gmail.com']) 
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return redirect ("home:donate")
