@@ -1,0 +1,29 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+   
+         
+         
+    {% for b in posts %}
+     
+         
+         
+    <div class="col-lg-4">
+       <div class="card card-margin data-aos="fade-up"
+       data-aos-anchor-placement="top-bottom"">
+           <div class="card-header no-border">
+           </div>
+           <div class="card-body pt-0">
+               <div class="kmc">
+                  <p class="lead">This request has been closed, to view open request <a href="#">click here.</a></p>
+               </div>
+               <div class="kmc-blood-action">
+                <a href="{% url 'home:draft' b.slug %}" class=" btn btn-sm btn-border-primary">Details</a>
+            </div>
+           </div>
+       </div>
+   </div>
+
+
+    {% endfor %}
+{% endblock %}

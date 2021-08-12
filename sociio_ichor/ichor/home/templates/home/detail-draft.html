@@ -1,0 +1,78 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+{% load social_share %}
+{% block head %}
+    <title> Details | Sociio Ichor</title>
+    <style>
+        .ichor-details{
+            margin-top: 15%;
+            background-color: white; 
+            margin-bottom: 10%;
+            border-radius: 4px;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .ichor-details .img{
+            width: 120%;
+            margin-top: 3%;
+        }
+
+        .btn-sm-2{
+            width: 30%;
+        }
+      
+        @media only screen and (max-width: 768px){
+            .ichor-details{
+                width: 90%;
+                margin-top: 35%;
+            }
+            .img img{
+                width: 200px !important;
+            }
+            .btn-sm-2{
+                width: 100px;
+            }
+            .ichor-guide{
+                margin-top: 0.5%;
+            }
+        }
+       .ichor-guide{
+           margin-top: 5%;
+       }
+    </style>
+{% endblock head %}
+
+
+{% block content %}
+    <div class="container ichor-details ">
+    <div class="row">
+        <div class="col-lg-3 img text-center">
+            <img src="{% static 'home/logox.png' %}" width="80%" style="margin-top: 15%;" alt="logo">
+
+        </div>
+        <div class="col-lg-4 my-5">
+      <p class="lead">Sorry this request has been closed.</p>
+</div>
+
+     
+
+
+    </div>    
+    </div>
+    
+    {% block script %}
+
+    <script>
+        function getURL() {
+    alert("Copy : " + window.location.href);
+}
+    </script>
+        
+    {% endblock script %}
+        
+
+{% endblock content %}
+    
+    

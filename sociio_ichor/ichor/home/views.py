@@ -2,13 +2,13 @@ from re import template
 from django.db.models import query
 from django.db.models.query import RawQuerySet
 from django.shortcuts import render, redirect
-from .models import BloodRequest
+from .models import BloodRequest, STATUS_DRAFT
 from django.views.generic import ListView, DetailView
 from django.views import generic
 from django.shortcuts import render,get_object_or_404
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
-from .models import STATUS_PUBLISH
+from .models import STATUS_PUBLISH, STATUS_DRAFT
 
 from django.db.models import Q
 
@@ -78,3 +78,21 @@ def contactus(request):
     form = ContactForm(request.POST)
     return render(request, "home/contactus.html", {'contact_form':form})
 
+
+def post_draft_list(request):
+    posts = BloodRequest.objects.filter(status = STATUS_DRAFT)
+    return render(request, 'home/draft.html', {'posts': posts})
+
+
+    
+def detailDraft_view(request, name_slug):
+    posts = get_object_or_404(BloodRequest, slug=name_slug)
+    return render(request, 'home/detail-draft.html', {'posts':posts,})
+    
+def error_404(request, exception):
+        data = {}
+        return render(request,'home/404.html', data)
+
+def error_500(request, *args):
+        data = {}
+        return render(request,'home/500.html', data)
