@@ -22,7 +22,7 @@ body {
 	--color-text: rgb(255, 255, 255);
 	--color-text-2: rgb(252, 247, 247);
 	--color-text-num: rgb(109, 1, 33);
-	--color-bg: #ffd4e1;
+	--color-bg: #f1bfb0;
 	--color-link: rgb(0, 0, 0);
 	--color-link-hover: #105702;
 	--color-reveal: var(--color-bg);
@@ -575,3 +575,4 @@ main {
   font-family: 'Raleway', sans-serif;
 color: #2ecc71;		
 }
+

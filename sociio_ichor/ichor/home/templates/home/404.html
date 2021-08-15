@@ -77,7 +77,7 @@ body {
   margin-bottom: 15px;
 }
 
-.notfound a {
+.notfound .button {
   font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
   text-decoration: none;
@@ -87,6 +87,19 @@ body {
   border: 2px solid #c9c9c9;
   display: inline-block;
   padding: 10px 25px;
+  font-weight: 700;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.notfound .phone {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: transparent;
+  color: #c9c9c9;
+  display: inline-block;
+  padding: 10px 2px;
   font-weight: 700;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
@@ -125,13 +138,17 @@ body {
 			<div class="notfound-404">
 				<h1>4<span>0</span>4</h1>
 			</div>
-			<p>The page you are looking for might have been removed had its name changed or is: </p>
-			<ul>
-				<li>either unavailable</li>
-				<p class="lead">OR</p>
-				<li>The blood donation request that you followed has been fulfilled.</li>
-			</ul>
-			<a href="{% url 'home:land' %}">home page</a>
+    <p>
+      Thank you for coming forward to donate. Fortunately, we have found a suitable donor to the patient. However, every 5 seconds a life is lost due to the inadequacy of blood.
+
+      We request you to go to the <a class="phone" href="https://goo.gl/maps/CEbBgGhYzRidCbmL6">KMC Manipal</a> to donate blood and aid a noble cause!
+      <br>
+      Phone No: <a class="phone" href="tel:0820 2922 331">0820 2922 331</a>
+    </p>
+
+    <hr>
+    <p>If you did not follow a request for blood donation, You are seeing this error because the page at this URL does not exist or has been moved.</p>
+			<a class="button" alt="sociio-ichor homepage" href="{% url 'home:land' %}">home page</a>
 		</div>
 	</div>
 
