@@ -1,9 +1,12 @@
+{% extends 'home/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
+
+{% block head %}
+  
     <!-- Required meta tags -->
     <meta charset="utf-8" />
+    <link rel = "icon" href = "{% static 'home/ichornotext.png' %}"
+    type = "image/x-icon">
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -27,8 +30,12 @@
     <link rel="stylesheet" href="{% static 'home/style-con.css' %}" />
 
     <title>Sociio Ichor | Contact</title>
-  </head>
-  <body>
+
+{% endblock head %}
+  
+  {% block content %}
+  
+
     <div class="content">
       <div class="container ichor-form-contact">
         <div class="row align-items-stretch no-gutters contact-wrap">
@@ -145,11 +152,18 @@
         </div>
       </div>
     </div>
+ 
+  {% endblock content %}
+    
 
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.validate.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+
+{% block scripts %}
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.validate.min.js"></script>
+<script src="js/main.js"></script>
+
+{% endblock scripts %}
+  
 </html>
