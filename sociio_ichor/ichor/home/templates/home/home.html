@@ -24,41 +24,53 @@
      
          
          
-     {% for b in blood %}
-     <div class="col-lg-4">
-        <div class="card card-margin data-aos="fade-up"
-        data-aos-anchor-placement="top-bottom"">
-            <div class="card-header no-border">
-            </div>
-            <div class="card-body pt-0">
-                <div class="kmc">
-                    <div class="kmc-title-wrapper">
-                        <div class="kmc-date-primary">
-                            <span class="kmc-date-day">{{ b.blood_request_id }}</span>
-                        </div>
-                        <div class="kmc-blood-info">
-                            <span class="kmc-pro-title">KMC, Manipal - blood bank</span>
-                            <span class="kmc-blood-time">{{ b.time_stamp}}</span>
-                        </div>
-                    </div>
-                    <ol class="kmc-blood-points">
-                        <li class="kmc-blood-item"><span><b>Blood Group - </b>{{ b.blood_group }}</span></li>
-                        <li class="kmc-blood-item"><span><b>Blood Type - </b>{{ b.blood_type }}</span></li>
-                        <li class="kmc-blood-item"><span><b>Units required - </b>{{ b.units }}</span></li>
-                
-                    </ol>
-                    <div class="row mx-3">
-                        <div class="kmc-blood-action">
-                            <a href="{% url 'home:details' b.slug %}" class=" btn btn-sm btn-border-primary">Details</a>
-                        </div>
-                    </div>
+    
+    {% if blood %}
+    {% for b in blood %}
+    <div class="col-lg-4">
+       <div class="card card-margin data-aos="fade-up"
+       data-aos-anchor-placement="top-bottom"">
+           <div class="card-header no-border">
+           </div>
+           <div class="card-body pt-0">
+               <div class="kmc">
+                   <div class="kmc-title-wrapper">
+                       <div class="kmc-date-primary">
+                           <span class="kmc-date-day">{{ b.blood_request_id }}</span>
+                       </div>
+                       <div class="kmc-blood-info">
+                           <span class="kmc-pro-title">KMC, Manipal - blood bank</span>
+                           <span class="kmc-blood-time">{{ b.time_stamp}}</span>
+                       </div>
+                   </div>
+                   <ol class="kmc-blood-points">
+                       <li class="kmc-blood-item"><span><b>Blood Group - </b>{{ b.blood_group }}</span></li>
+                       <li class="kmc-blood-item"><span><b>Blood Type - </b>{{ b.blood_type }}</span></li>
+                       <li class="kmc-blood-item"><span><b>Units required - </b>{{ b.units }}</span></li>
+               
+                   </ol>
+                   <div class="row mx-3">
+                       <div class="kmc-blood-action">
+                           <a href="{% url 'home:details' b.slug %}" class=" btn btn-sm btn-border-primary">Details</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>         
+
+    {% endfor %}
+
+  
+        {% else %}
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <p> We do not have any requests for blood donations right now, kindly check back in a few days. </p>
                 </div>
             </div>
         </div>
-    </div>         
-
-     {% endfor %}
-
+        {% endif %}
     </div>
     </div>
 {% endblock content %}

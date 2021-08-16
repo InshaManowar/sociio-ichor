@@ -399,7 +399,6 @@ main {
 }
 
 .preview__content {
-	column-count: 2;
 	position: relative;
 	text-align: justify;
 	opacity: 0;
