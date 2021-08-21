@@ -114,9 +114,17 @@ a {
       color: #35477d;
       font-size: 20px;
       margin-bottom: 30px; }
+    .contact-wrap .form h1 {
+      color: #35477d;
+      font-size: 20px;
+      margin-bottom: 30px; }
   .contact-wrap .contact-info {
     background: #e7476f; }
     .contact-wrap .contact-info h3 {
+      color: #fff;
+      font-size: 25px;
+      margin-bottom: 30px; }
+    .contact-wrap .contact-info h1 {
       color: #fff;
       font-size: 25px;
       margin-bottom: 30px; }
