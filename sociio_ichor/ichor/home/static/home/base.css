@@ -14,9 +14,11 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,su
 	height: 85px !important;
 }
 
-html {
-	background: #fff;
+.navbar-collapse{
+	background-color: rgb(63, 63, 63);
+	width: 120vw;
 }
+
 
 body {
 	--color-text: rgb(255, 255, 255);

@@ -1,15 +1,16 @@
 from re import template
+import re
 from django.db.models import query
 from django.db.models.query import RawQuerySet
 from django.shortcuts import render, redirect
-from .models import BloodRequest, STATUS_DRAFT
+from .models import BloodRequest, DonorRequest, STATUS_DRAFT
 from django.views.generic import ListView, DetailView
 from django.views import generic
 from django.shortcuts import render,get_object_or_404
 from .forms import ContactForm
 from django.core.mail import send_mail, BadHeaderError
 from .models import STATUS_PUBLISH, STATUS_DRAFT
-
+from home.forms import DonorForm
 from django.db.models import Q
 
 # Create your views here.
@@ -96,3 +97,20 @@ def error_404(request, exception):
 def error_500(request, *args):
         data = {}
         return render(request,'home/500.html', data)
+    
+
+
+def donor_form(request):
+    form = DonorForm()
+    if request.method == 'POST':
+        #print('Printing POST:', request.POST)
+        form = DonorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect ('home:donor_confirm')
+    context = {'form':form}
+        
+    return render(request, 'home/donor.html', context)
+
+def donor_confirm(request):
+    return render(request, 'home/donor_confirm.html')

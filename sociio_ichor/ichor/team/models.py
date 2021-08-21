@@ -1,8 +1,8 @@
 from django.db import models
 
 def upload_location(instance, filename, *kwargs):
-	file_path = 'team/{first_name}-{filename}'.format(
-     first_name=str(instance.first_name), filename=filename)
+	file_path = 'team/{first_name}-{last_name}'.format(
+     first_name=str(instance.first_name), last_name=str(instance.last_name))
 	return file_path
 # Create your models here.
 class Team(models.Model):

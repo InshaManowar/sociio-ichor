@@ -14,5 +14,7 @@ urlpatterns = [
     path('', views.landing, name='land'),
     path('policy/', views.privacy, name='privacy'),
     path('drafts/', views.post_draft_list, name='post_draft_list'),
+    path('donor/', views.donor_form, name='donor'),
+    path('donor/confirm', views.donor_confirm, name='donor_confirm'),
 
 ]

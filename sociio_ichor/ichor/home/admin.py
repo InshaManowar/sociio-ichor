@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import BloodRequest
+from .models import BloodRequest, DonorRequest
 from django_summernote.admin import SummernoteModelAdmin
 
 class BloodRequestAdmin(SummernoteModelAdmin):
@@ -14,3 +14,10 @@ class BloodRequestAdmin(SummernoteModelAdmin):
 admin.site.register(BloodRequest, BloodRequestAdmin)
 
 
+class DonorRequestAdmin(admin.ModelAdmin):
+    list_display=('full_name', 'phone', 'blood_group')
+    list_filter=('blood_group',)
+    search_fields=('blood_group',)
+    
+admin.site.register(DonorRequest, DonorRequestAdmin)
+    

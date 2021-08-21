@@ -1,0 +1,32 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+{% block head %}
+    <style>
+              @media (max-width: 767px) { 
+                  .head-text{
+                      margin-top: 36%;
+                  }
+
+                  h2{
+                      font-size: 1rem;
+                  }
+              }
+    </style>
+{% endblock head %}
+    
+
+
+{% block content %}
+<div style="margin-top: 15%; height: 50vh;" class="container" >
+        <h1 class="head-text">Thank you!
+        </h1>
+        <h2 class="text-center">We will get in touch with you as soon as we find a match</h2>
+    
+      
+      <!-- <div class="col-lg-6">
+          <img src="{% static 'home/9.png' %} " width="100%" height="100%" alt="">
+      </div> -->
+</div>
+{% endblock content %}
+    

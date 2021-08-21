@@ -2,8 +2,10 @@
 
 
 {% block head %}
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Sociio Ichor | Team</title>
+<meta charset="UTF-8">
+
     <style>
         /**********************************/
 /********** Common CSS ************/
@@ -214,7 +216,7 @@ h1.title a {
   {% for t in team %}
   <div class="team col-lg-4">
     <div class="team-img">
-      <img src="{{ t.profile_image.url }}" alt="Team Image">
+      <img src="{{ t.profile_image.url }}" alt="{{ t.first_name }}">
       <div class="team-social">
           
           {% if t.twitter %}

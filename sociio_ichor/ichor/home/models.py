@@ -12,8 +12,6 @@ STATUS = (
     (STATUS_DRAFT, "Draft"),
     (STATUS_PUBLISH, "Publish")
 )
-
-
 BG_CHOICES = (
     ('A+','A+'),
     ('B+','B+'),
@@ -64,3 +62,21 @@ def pre_save_blog_post_receiver(sender, instance, *args, **kwargs):
 		instance.slug = slugify(instance.name)
   
 pre_save.connect(pre_save_blog_post_receiver, sender=BloodRequest)
+
+
+class DonorRequest(models.Model):
+    full_name = models.CharField(max_length=200, default='')
+    date_of_birth = models.CharField(max_length=11, default='')
+    email_id = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=11, default='')
+    city = models.CharField(max_length=100, default='')
+    state = models.CharField(max_length=100, default='')
+    pin_code = models.IntegerField(default=False)
+    weight = models.CharField(max_length=10, default='')
+    agree = models.BooleanField(blank=True,  default=False)
+    blood_group = models.CharField(
+        max_length=4, choices=BG_CHOICES, default=None
+    )    
+    
+
+
