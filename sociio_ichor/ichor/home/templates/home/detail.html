@@ -89,7 +89,7 @@
         </div>
         <div class="modal-body">
           
-            <span class="ichor-share-link ">{% post_to_whatsapp "We need : {{ blood.units }}" object_or_url  'WhatsApp' %}</span>
+            <span class="ichor-share-link ">{% post_to_whatsapp object_or_url  'WhatsApp' %}</span>
             <span class="ichor-share-link">{% post_to_twitter object_or_url "Twitter" 'Twitter' %}</span>
             <span class="ichor-share-link">{% post_to_facebook object_or_url 'Facebook' %}</span>
             <button class="btn btn-secondary" type="button" onclick="getURL();">Get Page URL</button>
