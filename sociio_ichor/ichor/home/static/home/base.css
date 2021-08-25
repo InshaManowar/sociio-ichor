@@ -22,7 +22,7 @@ body {
 	--color-text-num: rgb(109, 1, 33);
 	--color-bg: #f1bfb0;
 	--color-link: rgb(0, 0, 0);
-	--color-link-hover: #105702;
+	--color-link-hover: #57020d;
 	--color-reveal: var(--color-bg);
 	--color-title: rgb(61, 1, 1);
 	--color-nav: rgb(27, 26, 26);
@@ -80,6 +80,7 @@ a {
 	font-size: 1.2rem;
 	letter-spacing: 0px;
 }
+
 
 a:hover,
 a:focus {

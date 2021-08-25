@@ -1,5 +1,6 @@
 <html lang="en">
     {% load static %}
+    {% load i18n %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,7 +52,7 @@
 									<a class="nav-link" href="{% url 'team:team' %}">Our Team</a>
 								</li>
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-									<a class="nav-link btn-donate  " href="{% url 'home:donor' %}">Register as donor</a>
+									<a class="nav-link btn-donate  " href="{% url 'home:donor' %}">Register as a donor</a>
 								</li>
 							</ul>
 						</div>
@@ -78,7 +79,7 @@
             <div class="col-xs-6 col-md-3">
               <h6>Contacts</h6>
               <ul class="footer-links">
-                <li><a href="tel:9477281022">Phone</a></li>
+                <li><a href="tel:8886660800">Phone</a></li>
                 <li><a href="#">Mail</a></li>
                 <li><a href="#">Instagram</a></li>
 
@@ -93,7 +94,7 @@
                 <li><a href="{%  url 'home:donate' %}">Donate Blood</a></li>
 
                 <li><a href="{% url 'home:donor' %}">Register as donor</a></li>
-                <li><a href="{% url 'home:privacy' %}">Privacy Policy</a></li>
+                <!-- <li><a href="{% url 'home:privacy' %}">Privacy Policy</a></li> -->
               </ul>
             </div>
           </div>

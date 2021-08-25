@@ -35,6 +35,7 @@
         color: white;
       }
     </style>
+    
 {% endblock head %}
     
 
@@ -43,7 +44,7 @@
 <div class="container" style="margin-top: 10%;" >
    <h1 class="head-text">Become a donor today!</h1>
    <p class="lead text-center">
-     some motivating text
+    Be someone’s beacon of hope
    </p>
 </div>
 
@@ -55,6 +56,7 @@
     <table>
     {{ form.as_p }}
 
+    
  </table>
 
 <!-- Button trigger modal -->
@@ -73,13 +75,11 @@
           </button>
         </div>
         <div class="modal-body">
-        1. I confirm that the information I provided in this document is accurate and true
-        <br>
-        2. I confirm that I wish to share the information provided in her ewith SOCIIO for the exclusive purpose
-        of matching with patients and sharing this information directly and solely with the matched pateints (and/or their next of kin)
-        <br>
-        3. I agree to hold SOCIIO harmless for its use of information for the exclusive purpose(s) as set out above.
-        </div>
+          1. I confirm that the information I provided in this document is accurate and true.
+                  <br>
+                  2. I confirm that I wish to share the information provided here to SOCIIO for the exclusive purpose of matching with patients and sharing this information directly and solely with the matched patients. (and/or kin)
+                  <br>
+                  3. I agree to not hold SOCIIO accountable for the use of information for the exclusive purpose(s) as stated above.        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         </div>
@@ -96,3 +96,8 @@
 
 {% endblock content %}
     
+
+{% block scripts %}
+  
+{% endblock scripts %}
+  

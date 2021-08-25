@@ -4,6 +4,7 @@
 {% block head %}
     <title>Sociio Ichor | About us</title>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="description" content="Sociio Ichor is a blood donation request platform which helps to connect patient with donors faster in India">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
@@ -17,12 +18,20 @@
             text-align: justify;
             font-family: Lato;
             color: white;
+            font-size: 1rem !important;
+        }
+       .ichor-p-head{
+            text-align: justify;
+            font-family: Lato;
+            color: white;
+          
+            font-size: 1.2rem !important;
         }
         .ichor-info-1{
             padding: 3%;
             border-radius: 7px;
             font-size: 2rem !important;
-            background-image:linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.692)), url(../../static/home/11.png);
+            background-image:linear-gradient(rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.568)), url(../../static/home/11.png);
             background-position: center;
             line-height: 100%;
 
@@ -136,6 +145,10 @@
           font-size: 1rem;
           padding: 3%;
       }
+      .ichor-p-head{
+          font-size: 1rem;
+          padding: 3%;
+      }
       .ichor-title{
           font-size: 4rem !important;
           padding: 3%;
@@ -162,6 +175,10 @@
 
       .ichor-counter{
           width: 100vw;
+      }
+      video{
+        margin-top: 5%;
+        width:300px
       }
   }
   @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
@@ -464,6 +481,7 @@ a, a:hover {
   .yellow:nth-child(2n)::before {
     background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
   }
+
 }
 .header-bg{
   background-color: #d9e4f5;
@@ -471,6 +489,11 @@ background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
 }
 p{
   font-size: 1rem !important;
+}
+
+.text-red{
+  color: #ad4758;
+  font-weight: 700;
 }
     </style>
 {% endblock head %}
@@ -482,14 +505,13 @@ p{
   <div class="container-fluid header-bg">
     
 <span class="container ichor-about-body">
-  <h1  style="margin-top: 7%; "class="display-1 text-center ichor-title">About <span>Us</span> </h1>
+  <h1  style="margin-top: 7%; "class="display-1 text-center ichor-title">About <span>us</span> </h1>
 </span>
 
 <div class="container ichor-info-1">
 
-  <p class="lead ichor-p">
-    Hoping to bring a change in this world, we aim to connect the donors and patients across all of India through this cause. Ever since the advent of Covid-19, there has been discernible neglect towards blood donation causing a shortage in every locality. Several lives are lost every day across the country due to blood shortage. We believe no person in this world deserves to lose their life in the wait for blood. We aim to instil blood donation into the lifestyle of every healthy individual in India and believe that any life can be saved if connected with the right person at the right time. The key to solving this issue is by embedding blood donation into people’s lifestyles and get them accustomed to donating every once in a while. This can also bring a balance to the supply-demand gap and improve the current situation of the scarcity of blood donors all around the country. 
-
+  <p class="lead ichor-p-head">
+    There has always been neglect in blood donation, causing a shortage in every locality, leading to gazillion lives being lost every day. We aim to instil blood donation into the lifestyle of every healthy individual in India and believe that any life can be saved if connected with the right person at the right time. This can also solve the vital issue of the supply-demand gap and prevent blood scarcity.
     
   </p>
 </div>
@@ -500,25 +522,25 @@ p{
       <div class="col-lg-3">
           <div class="card">
               <i class="fa fa-tint  px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center">Every day 12,000 people die due to blood shortage.</p>
+              <p class="lead px-3 my-3 text-center">Every day <span class="text-red">12,000</span> people die due to blood shortage.</p>
           </div>
       </div>
       <div class="col-lg-3">
           <div class="card">
               <i class="fa fa-child px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center">Innumerous myths surrounding blood donation.</p>
+              <p class="lead px-3 my-3 text-center">Innumerous <span class="text-red">myths</span> surrounding blood donation.</p>
           </div>
       </div>
       <div class="col-lg-3">
           <div class="card">
               <i class="fa fa-paper-plane  px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center">Gazillion untargeted messages on social media.</p>
+              <p class="lead px-3 my-3 text-center"><span class="text-red">Gazillion</span> untargeted messages on social media.</p>
           </div>
       </div>
       <div class="col-lg-3">
           <div class="card">
               <i class="fa fa-stethoscope  px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center">Roughly 4100 units of blood get wasted everyday.</p>
+              <p class="lead px-3 my-3 text-center">Roughly <span class="text-red"> 4100</span> units of blood get wasted everyday.</p>
           </div>
       </div>
   </div>
@@ -562,24 +584,26 @@ p{
                 <div class="col-lg-6">
                   <div class="card-counter info">
                     <i class="fa fa-users"></i>
-                    <span class="count-numbers">10</span>
+                    <span class="count-numbers">7</span>
                     <span class="count-name">Team Members</span>
                   </div>
                 </div>
           </div>
     </div>
-     <div class="col-lg-6 ichor-info-2">
+     <div class="col-lg-6 ichor-info-2 d-none d-lg-block ">
               <p class="lead ichor-p" style="margin-top: 2%;">
                 It started with the need for platelets by one of our teammate’s volunteers. His sister was pregnant and was in dire need of platelets. Even after searching everywhere, it led to no avail. After our teammate learned of their situation, he offered to donate. But by the time he was able to get his compatibility test done, the patient had passed away along with the newborn. This stirred up a whirlpool of emotions among us and led to the beginning of Sociio Ichor.
-
-                  
               </p>
           </div>
       </div>
      </div>
-     <div class="container ichor-video my-3  d-none d-lg-block">
+     <div class="phone-text container d-lg-none">
+       <p class="lead text-justify">                It started with the need for platelets by one of our teammate’s volunteers. His sister was pregnant and was in dire need of platelets. Even after searching everywhere, it led to no avail. After our teammate learned of their situation, he offered to donate. But by the time he was able to get his compatibility test done, the patient had passed away along with the newborn. This stirred up a whirlpool of emotions among us and led to the beginning of Sociio Ichor.
+      </p>
+     </div>
+     <div class="container ichor-video my-3 ">
        <div class="row">
-         <div class="col-lg-6 ichor-info-3">
+         <div class="col-lg-6 ichor-info-3 d-none d-lg-block">
            <p class=" lead ichor-p" style="margin-top: 7%;">
             With the second wave of COVID-19 hitting India hard, there have been many difficulties in reaching out to people. It has become difficult to treat the patients who tested positive with COVID-19 due to the lack of plasma donations. The communication gap between the patients and the donors has become increasingly problematic, which we at Sociio, under the project ICHOR, intend to improve. We hope to be able to connect the struggling patients with compatible donors and bring the rising state of Covid under control.
            </p>
