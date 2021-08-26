@@ -36,8 +36,9 @@ class BloodDetailView(DetailView):
     model = BloodRequest
     template_name = 'home/home.html'
     
+    
 def detail_view(request, name_slug):
-    blood = get_object_or_404(BloodRequest, slug=name_slug)
+    blood = get_object_or_404(BloodRequest.objects.filter(status=STATUS_PUBLISH), slug=name_slug)
     return render(request, 'home/detail.html', {'blood':blood,})
     
     
