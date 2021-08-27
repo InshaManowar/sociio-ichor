@@ -37,13 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    #my-apps
-    
-   'home',
-   'team',
-   'django_social_share',
-   'django_summernote',
+    'taggit',
+    'home',
+    'team',
+    'django_social_share',
+    'django_summernote',
+    'blog',
 ]
 
 MIDDLEWARE = [

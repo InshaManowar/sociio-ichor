@@ -40,7 +40,6 @@ TYPE=(
 class BloodRequest(models.Model):
     blood_request_id = models.AutoField(primary_key=True)
     time_stamp = models.DateTimeField(auto_now_add=True)
-    slug = models.SlugField(max_length=400, unique=True, default=None)
     blood_group = models.CharField(
         max_length=20, choices=BG_CHOICES, default=None, blank=True, null=True
     )
@@ -55,7 +54,8 @@ class BloodRequest(models.Model):
     hospital_initials = models.CharField(default='', blank=False, null=False, max_length=50 )
     status = models.IntegerField(choices=STATUS, default=0)
     urgent = models.BooleanField( blank=True, default=False)
-    
+    slug = models.SlugField(max_length=400, unique=True, default=None)
+
     class Meta:
         verbose_name = 'Blood Request'
     
