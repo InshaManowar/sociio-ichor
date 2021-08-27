@@ -40,17 +40,17 @@ class BloodRequest(models.Model):
     time_stamp = models.DateTimeField(auto_now_add=True)
     slug = models.SlugField(max_length=400, unique=True, default=None)
     blood_group = models.CharField(
-        max_length=20, choices=BG_CHOICES, default=None
+        max_length=20, choices=BG_CHOICES, default=None, blank=True, null=True
     )
     blood_type = models.CharField(
-        max_length=50, choices=TYPE, default=None
+        max_length=50, choices=TYPE, default=None, blank=True, null=True
     )
-    acceptable_blood_group = models.CharField(max_length = 100, blank=False )
+    acceptable_blood_group = models.CharField(max_length = 100, blank=True, null=True )
     Phone = models.CharField(max_length=10, default='')
     units = models.CharField(max_length=5)
     note = models.TextField(default='', blank=True, null=True)
     address = models.TextField(default='', blank=True, null=True)
-    hospital_initials = models.CharField(default='KMC', blank=False, null=False, max_length=50 )
+    hospital_initials = models.CharField(default='', blank=False, null=False, max_length=50 )
     status = models.IntegerField(choices=STATUS, default=0)
     
     class Meta:
