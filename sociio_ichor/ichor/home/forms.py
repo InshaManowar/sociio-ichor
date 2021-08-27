@@ -27,7 +27,7 @@ class DonorForm(forms.ModelForm):
             'state': forms.TextInput(attrs = {'class':'form-control'}),
             'pin_code': forms.NumberInput(attrs = {'class':'form-control'}),
             'phone': forms.TextInput(attrs = {'class':'form-control'}),
-            'date_of_birth': forms.DateInput(attrs={'placeholder': 'YYYY-MM-DD', 'class':'form-control'}),
+            'date_of_birth': forms.TextInput(attrs={'placeholder': 'YYYY-MM-DD', 'class':'form-control'}),
             'weight': forms.NumberInput(attrs = {'class':'form-control', 'placeholder':'Body weight'}),
             'email_id': forms.EmailInput(attrs = {'class':'form-control'}),
         }

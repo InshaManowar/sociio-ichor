@@ -54,7 +54,7 @@ class BloodRequest(models.Model):
     address = models.TextField(default='', blank=True, null=True)
     hospital_initials = models.CharField(default='', blank=False, null=False, max_length=50 )
     status = models.IntegerField(choices=STATUS, default=0)
-    # urgent = models.BooleanField( blank=True, default=False)
+    urgent = models.BooleanField( blank=True, default=False)
     
     class Meta:
         verbose_name = 'Blood Request'
@@ -69,7 +69,7 @@ pre_save.connect(pre_save_blog_post_receiver, sender=BloodRequest)
 
 class DonorRequest(models.Model):
     full_name = models.CharField(max_length=200, default='')
-    date_of_birth = models.DateField(default='')
+    date_of_birth = models.DateField(default=False, blank=False)
     email_id = models.EmailField(max_length=200)
     phone = models.CharField(max_length=11, default='')
     city = models.CharField(max_length=100, default='')
