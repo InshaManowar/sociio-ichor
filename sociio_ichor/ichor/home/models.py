@@ -54,7 +54,7 @@ class BloodRequest(models.Model):
     address = models.TextField(default='', blank=True, null=True)
     hospital_initials = models.CharField(default='', blank=False, null=False, max_length=50 )
     status = models.IntegerField(choices=STATUS, default=0)
-    urgent = models.BooleanField( blank=True, default=False)
+    # urgent = models.BooleanField( blank=True, default=False)
     
     class Meta:
         verbose_name = 'Blood Request'
