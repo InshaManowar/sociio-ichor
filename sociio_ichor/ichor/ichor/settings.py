@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'django_social_share',
     'django_summernote',
     'blog',
+    'newsletter',
+    'crispy_forms',
+    'indian_cities'
 ]
 
 MIDDLEWARE = [
@@ -132,3 +135,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+GOOGLE_API_KEY = 'AIzaSyC4shMjp6CiCQQ0GabJ62BMxi-dkb0eKZc'

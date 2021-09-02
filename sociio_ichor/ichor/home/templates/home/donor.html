@@ -1,7 +1,7 @@
 {% extends 'home/base.html' %}
 
-
 {% block head %}
+<title>Become a donor</title>
     <style>
       .form-control {
           width: 50vw;
@@ -34,6 +34,27 @@
         text-decoration: none;
         color: white;
       }
+      .head-text{
+        font-family: Oswald;
+        letter-spacing: 2px;
+        font-weight: 700;
+        font-size: 4.5rem;
+      }
+      .head-text span{
+      font-family:Oswald;
+      font-size: 4.5rem;
+      letter-spacing: 2px;
+      font-weight: 700;
+  color: #CA4246;
+  
+  }
+
+  .subtext{
+    font-family: Roboto;
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+
     </style>
     
 {% endblock head %}
@@ -42,8 +63,8 @@
 {% block content %}
 
 <div class="container" style="margin-top: 10%;" >
-   <h1 class="head-text">Become a donor today!</h1>
-   <p class="lead text-center">
+   <h1 class="head-text">Become a <span>donor</span> today!</h1>
+   <p class="lead subtext text-center">
     Be someone’s beacon of hope
    </p>
 </div>

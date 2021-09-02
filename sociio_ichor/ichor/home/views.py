@@ -18,7 +18,7 @@ from django.db.models import Q
 class BloodListView(ListView):
     model=BloodRequest
     template_name = 'home/home.html'
-    queryset=BloodRequest.objects.filter(status=STATUS_PUBLISH)
+    queryset=BloodRequest.objects.filter(status=STATUS_PUBLISH).order_by('-time_stamp')
     context_object_name='blood'
      
 
