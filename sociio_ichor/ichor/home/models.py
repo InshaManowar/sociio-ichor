@@ -97,6 +97,8 @@ class BloodRequest(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     urgent = models.BooleanField( blank=True, default=False)
     slug = models.SlugField(max_length=400, unique=True, default=None)
+    custom_field_key = models.CharField(default='', blank=True, max_length=255)
+    custom_field_value = models.CharField(default='', blank=True, max_length=255)
 
     class Meta:
         verbose_name = 'Blood Request'
@@ -117,7 +119,7 @@ class DonorRequest(models.Model):
     city = models.CharField(max_length=100, default='', choices=cities)
     state = models.CharField(max_length=100, default='', choices=STATES)
     pin_code = models.IntegerField(default=False)
-    weight = models.CharField(max_length=10, default='')
+    # weight = models.CharField(max_length=10, default='')
     I_agree_to_the_terms_and_conditions_stated_below = models.BooleanField(blank=False,  default=True)
     blood_group = models.CharField(
         max_length=4, choices=BG_CHOICES, default=None

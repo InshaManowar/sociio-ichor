@@ -17,6 +17,9 @@ admin.site.register(BloodRequest, BloodRequestAdmin)
 class DonorRequestAdmin(admin.ModelAdmin):
     list_display=('full_name', 'phone', 'blood_group')
     list_filter=('blood_group',)
+    formfield_overrides = {
+        DonorRequest.date_of_birth: {'input_formats': ('%d/%m/%Y',)},
+    }
     search_fields=('blood_group',)
     
 admin.site.register(DonorRequest, DonorRequestAdmin)

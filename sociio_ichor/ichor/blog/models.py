@@ -45,7 +45,7 @@ class BlogContent(models.Model):
     section = models.ForeignKey(Blog, default=None , on_delete=models.CASCADE)
     subheading = models.CharField(max_length=250)
     content = models.TextField(default=None)
-    images = models.ImageField(upload_to=upload_here, blank=True, default=None, null=True)
-    caption_image = models.CharField(max_length=255, default='')
+    images = models.ImageField(upload_to=upload_here, blank=True, default=None)
+    caption_image = models.CharField(max_length=255, default='', blank=True)
     
 

@@ -45,6 +45,9 @@
 								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link" href="{% url 'home:about' %}">About Us</a>
 								</li>
+								<li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+									<a class="nav-link" href="{% url 'blog:blog-list' %}">Blog</a>
+								</li>
                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
 									<a class="nav-link" href="{% url 'team:team' %}">Our Team</a>
 								</li>
@@ -91,10 +94,11 @@
               <h6>Quick Links</h6>
               <ul class="footer-links">
                 <li><a href="{% url 'home:about' %}">About Us</a></li>
-                <li><a href="{% url 'home:land' %}">Home</a></li>
+                <!-- <li><a href="{% url 'home:land' %}">Home</a></li> -->
                 <li><a href="{%  url 'home:donate' %}">Donate Blood</a></li>
 
                 <li><a href="{% url 'home:donor' %}">Register as donor</a></li>
+                <li><a href="{% url 'newsletter:letter-index' %}">Subscribe to newsletter</a></li>
                 <!-- <li><a href="{% url 'home:privacy' %}">Privacy Policy</a></li> -->
               </ul>
             </div>

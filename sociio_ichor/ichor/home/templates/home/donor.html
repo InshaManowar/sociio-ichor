@@ -1,22 +1,32 @@
 {% extends 'home/base.html' %}
-
+{% load static %}
 {% block head %}
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <title>Become a donor</title>
     <style>
       .form-control {
-          width: 50vw;
+          width: 100%;
       }
 
       .form-div{
-          width: 60vw;
+          width: 100%;
       }
       @media (max-width: 767px) { 
           .form-div{
               width: 90vw;
               margin-top: 15% !important;
           }
+          .form-cont{
+            margin: 3%;
+          }
           .head-text{
+            margin-top: 15%;
+            font-size: 3rem !important;
+          }
+          .head-text span{
             margin-top: 30%;
+            font-size: 3rem !important;
           }
       }
       .btn-outline-danger{
@@ -54,6 +64,159 @@
     font-size: 1.5rem;
     font-style: italic;
   }
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500);
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #444;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.slider {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.slider__nav {
+  width: 12px;
+  height: 12px;
+  margin: 2rem 12px;
+  border-radius: 50%;
+  z-index: 10;
+  outline: 6px solid #ccc;
+  outline-offset: -6px;
+  box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.slider__nav:checked {
+  -webkit-animation: check 0.4s linear forwards;
+          animation: check 0.4s linear forwards;
+}
+.slider__nav:checked:nth-of-type(1) ~ .slider__inner {
+  left: 0%;
+}
+.slider__nav:checked:nth-of-type(2) ~ .slider__inner {
+  left: -100%;
+}
+.slider__nav:checked:nth-of-type(3) ~ .slider__inner {
+  left: -200%;
+}
+.slider__nav:checked:nth-of-type(4) ~ .slider__inner {
+  left: -300%;
+}
+.slider__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400%;
+  height: 100%;
+  -webkit-transition: left 0.4s;
+  transition: left 0.4s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+}
+.slider__contents {
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  -webkit-flex-flow: column nowrap;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.slider__image {
+  font-size: 2.7rem;
+      color: #2196F3;
+}
+.slider__caption {
+  color: rgb(24, 24, 24);
+  font-weight: 500;
+  margin: 2rem 0 1rem;
+  text-shadow: 0 1px 1px rgba(230, 228, 228, 0.1);
+  font-family: Oswald;
+}
+.slider__txt {
+  color: rgb(26, 25, 25);
+  margin-bottom: 3rem;
+  max-width: 100%;
+}
+
+@-webkit-keyframes check {
+  50% {
+    outline-color: #333;
+    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+  }
+  100% {
+    outline-color: #333;
+    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  }
+}
+
+@keyframes check {
+  50% {
+    outline-color: #333;
+    box-shadow: 0 0 0 12px #333, 0 0 0 36px rgba(51, 51, 51, 0.2);
+  }
+  100% {
+    outline-color: #333;
+    box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
+  }
+}
+
+.slider__title{
+  font-family: Oswald;
+  font-size: 3rem;
+  text-align: center !important;
+}
 
     </style>
     
@@ -62,63 +225,106 @@
 
 {% block content %}
 
-<div class="container" style="margin-top: 10%;" >
+<div class="container-fluid" style="margin-top: 10%;" >
    <h1 class="head-text">Become a <span>donor</span> today!</h1>
    <p class="lead subtext text-center">
     Be someone’s beacon of hope
    </p>
 </div>
 
-<div style=" margin-top: 3%;  background-color:  white; border-radius: 7px; padding: 5%; margin-bottom: 3%;" class="container form-div"  >
+<div class="container"  >
+ <div class="row">
+   <div class="col-lg-6 text-center d-none d-lg-block" style="margin-top: 3%;  background-color: #9fa4c4;
+   background-image: linear-gradient(315deg, #9fa4c4 0%, #9e768f 74%);
    
+    border-radius: 7px; margin-bottom: 3%;">
+
+    <div class="slider ">
+      <input type="radio" name="slider" title="slide1" checked="checked" class="slider__nav"/>
+      <input type="radio" name="slider" title="slide2" class="slider__nav"/>
+      <input type="radio" name="slider" title="slide3" class="slider__nav"/>
+      <input type="radio" name="slider" title="slide4" class="slider__nav"/>
+      <div class="slider__inner">
+        <div class="slider__contents">
+          <img src="{% static 'home/icon-ichor/2.png'%}" width="200px" alt="">
+          <h2 class="slider__caption">Just 1 donation can save up to 3 lives.</h2>
+          <!-- <p class="slider__txt">Just 1 donation can save up to 3 lives.</p> -->
+        </div>
+        <div class="slider__contents">
+          <img src="{% static 'home/icon-ichor/6.png'%}" width="200px" alt="">
+          <h2 class="slider__caption">More than 38,000 blood donations are needed every day.</h2>
+          <!-- <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p> -->
+        </div>
+        <div class="slider__contents">
+          <img src="{% static 'home/icon-ichor/3.png'%}" width="200px" alt="">
+          <h2 class="slider__caption">Type AB plasma can be transfused to patients with all other blood types, but it's also in short supply.</h2>
+          <!-- <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p> -->
+        </div>
+        <div class="slider__contents">
+          <img src="{% static 'home/icon-ichor/4.png'%}" width="200px" alt="">
+          <h2 class="slider__caption">More than 1 million people every year are diagnosed with cancer for the first time. Many of them will need blood—sometimes daily—during chemotherapy.</h2>
+          <!-- <p class="slider__txt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. At cupiditate omnis possimus illo quos, corporis minima!</p> -->
+        </div>
+      </div>
+    </div>   </div>
+   <div class="col-lg-6 form-cont"style=" margin-top: 3%;  background-color:white; border-radius: 7px; padding: 5%; margin-bottom: 3%;" class="container form-div" >
+       
 <form  method="POST">
 
-    {% csrf_token %}
-    <table>
-    {{ form.as_p }}
+  {% csrf_token %}
+  <table>
+  {{ form.as_p }}
 
-    
- </table>
+  
+</table>
 
 <!-- Button trigger modal -->
 <a type="button" class="btn-donate " data-toggle="modal" data-target="#staticBackdrop">
-    Terms and condition
+  Terms and condition
 </a>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="staticBackdropLabel">Terms and Conditions</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          1. I confirm that the information I provided in this document is accurate and true.
-                  <br>
-                  2. I confirm that I wish to share the information provided here to SOCIIO for the exclusive purpose of matching with patients and sharing this information directly and solely with the matched patients. (and/or kin)
-                  <br>
-                  3. I agree to not hold SOCIIO accountable for the use of information for the exclusive purpose(s) as stated above.        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Terms and Conditions</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        1. I confirm that the information I provided in this document is accurate and true.
+                <br>
+                2. I confirm that I wish to share the information provided here to SOCIIO for the exclusive purpose of matching with patients and sharing this information directly and solely with the matched patients. (and/or kin)
+                <br>
+                3. I agree to not hold SOCIIO accountable for the use of information for the exclusive purpose(s) as stated above.        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
+</div>
 <br>
 <hr>
 <input type="submit" style="width: 45%;" class="btn btn-dark " value="Submit" />
 
 </form>
 
+   </div>
+ </div>
 </div>
 
 {% endblock content %}
     
 
 {% block scripts %}
-  
+<script>
+  AOS.init();
+</script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 {% endblock scripts %}
   
