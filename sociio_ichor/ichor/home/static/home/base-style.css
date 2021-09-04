@@ -538,6 +538,7 @@ body.dark .logo img {
     background-clip: border-box;
     border: 1px solid #e6e4e9;
     border-radius: 8px;
+    min-height: 250px;
 }
 
 .card .card-header.no-border {
