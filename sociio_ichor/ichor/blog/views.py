@@ -31,4 +31,3 @@ def detail_view(request,slug):
         form = SubscibersForm()
  
     return render(request, 'blog/detail.html', {'content':content, 'section':section, 'post':post, 'form':form,})
-    
