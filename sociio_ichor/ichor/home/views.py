@@ -1,3 +1,4 @@
+
 from re import template
 import re
 from django.db.models import query
@@ -8,10 +9,15 @@ from django.views.generic import ListView, DetailView
 from django.views import generic
 from django.shortcuts import render,get_object_or_404
 from .forms import ContactForm
+from django.template import RequestContext
+
+
 from django.core.mail import send_mail, BadHeaderError
 from .models import STATUS_PUBLISH, STATUS_DRAFT
 from home.forms import DonorForm
 from django.db.models import Q
+from django.http import HttpResponse
+
 
 # Create your views here.
 
@@ -85,6 +91,9 @@ def post_draft_list(request):
     posts = BloodRequest.objects.filter(status = STATUS_DRAFT)
     return render(request, 'home/draft.html', {'posts': posts})
 
+def donor_review(request):
+    review = DonorRequest.objects.all()
+    return render(request, 'home/review.html', {'review':review})
 
     
 def detailDraft_view(request, name_slug):

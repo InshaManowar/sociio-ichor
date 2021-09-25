@@ -45,7 +45,9 @@ INSTALLED_APPS = [
     'blog',
     'newsletter',
     'crispy_forms',
-    'indian_cities'
+    'indian_cities',
+    'localflavor',
+
 ]
 
 MIDDLEWARE = [
