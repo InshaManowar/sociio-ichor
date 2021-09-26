@@ -22,7 +22,7 @@ class DonorForm(forms.ModelForm):
     
     class Meta:
         model = DonorRequest
-        fields = ['full_name', 'email_id', 'date_of_birth', 'phone', 'city', 'state','pin_code', 'blood_group','I_agree_to_the_terms_and_conditions_stated_below',]
+        fields = ['full_name', 'email_id', 'date_of_birth', 'phone','state', 'city', 'pin_code', 'blood_group','I_agree_to_the_terms_and_conditions_stated_below']
         widgets = {
             'full_name': forms.TextInput(attrs = {'class':'form-control'}),
             #'city': INStateSelect(attrs=None),
