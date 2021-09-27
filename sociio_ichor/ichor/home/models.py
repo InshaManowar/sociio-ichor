@@ -20,45 +20,6 @@ def upload_review_photo(instance, filename, *kwargs):
     file_path = 'full_name/{filename}'.format(full_name=str(instance.full_name), filename=filename)
     return file_path
 
-STATES = (
-   ("AN","Andaman and Nicobar Islands"),
-   ("AP","Andhra Pradesh"),
-   ("AR","Arunachal Pradesh"),
-   ("AS","Assam"),
-   ("BR","Bihar"),
-   ("CG","Chhattisgarh"),
-   ("CH","Chandigarh"),
-   ("DN","Dadra and Nagar Haveli"),
-   ("DD","Daman and Diu"),
-   ("DL","Delhi"),
-   ("GA","Goa"),
-   ("GJ","Gujarat"),
-   ("HR","Haryana"),
-   ("HP","Himachal Pradesh"),
-   ("JK","Jammu and Kashmir"),
-   ("JH","Jharkhand"),
-   ("KA","Karnataka"),
-   ("KL","Kerala"),
-   ("LA","Ladakh"),
-   ("LD","Lakshadweep"),
-   ("MP","Madhya Pradesh"),
-   ("MH","Maharashtra"),
-   ("MN","Manipur"),
-   ("ML","Meghalaya"),
-   ("MZ","Mizoram"),
-   ("NL","Nagaland"),
-   ("OD","Odisha"),
-   ("PB","Punjab"),
-   ("PY","Pondicherry"),
-   ("RJ","Rajasthan"),
-   ("SK","Sikkim"),
-   ("TN","Tamil Nadu"),
-   ("TS","Telangana"),
-   ("TR","Tripura"),
-   ("UP","Uttar Pradesh"),
-   ("UK","Uttarakhand"),
-   ("WB","West Bengal")
-)
 
 BG_CHOICES = (
     ('A+','A+'),
@@ -77,12 +38,6 @@ TYPE=(
     ('Platelets', 'Platelets'),
 )
 
-
-
-
-
-
-
 class states(models.Model):
     id = models.IntegerField(max_length=255, primary_key=True)
     name = models.CharField(max_length=255, null=False)
@@ -90,10 +45,11 @@ class states(models.Model):
         return self.name
 
 
+
 class cities(models.Model):
-    id = models.IntegerField(max_length=11, primary_key=True)
-    city_name = models.CharField(max_length=160, null=False, default='')
-    state_id = models.ForeignKey(states, max_length=11, null=False, on_delete=models.CASCADE)
+    city_id = models.IntegerField(max_length=11, primary_key=True)
+    city_name = models.CharField(max_length=100, null=False, default='')
+    city_state = models.CharField(max_length=100, null=False, default='')
 
     def __str__(self):
         return self.city_name
