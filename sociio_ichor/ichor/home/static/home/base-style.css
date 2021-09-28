@@ -5,7 +5,7 @@ body{
 	line-height: 24px;
 	font-weight: 400;
 	width: 100%;
-	color: #212112;
+	color: #1e1f20;
 	background-color: #cc5577;
 	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1024%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(241%2c 191%2c 176%2c 1)'%3e%3c/rect%3e%3cpath d='M0%2c487.549C88.962%2c472.142%2c132.304%2c372.555%2c205.136%2c319.197C272.008%2c270.206%2c366.11%2c257.574%2c409.949%2c187.217C455.522%2c114.077%2c457.572%2c21.259%2c443.78%2c-63.806C430.14%2c-147.935%2c382.701%2c-219.286%2c332.834%2c-288.402C278.601%2c-363.569%2c227.005%2c-446.311%2c141.68%2c-482.517C52.136%2c-520.514%2c-50.114%2c-515.826%2c-144.108%2c-490.786C-239.632%2c-465.338%2c-327.946%2c-414.971%2c-392.593%2c-340.183C-457.195%2c-265.447%2c-498.202%2c-171.198%2c-505.515%2c-72.682C-512.565%2c22.283%2c-476.953%2c113.302%2c-432.509%2c197.52C-390.011%2c278.049%2c-332.143%2c348.435%2c-256.517%2c399.148C-179.849%2c450.559%2c-90.956%2c503.301%2c0%2c487.549' fill='%23ea9f89'%3e%3c/path%3e%3cpath d='M1440 928.6179999999999C1507.887 939.7049999999999 1576.211 896.9159999999999 1626.067 849.525 1671.952 805.909 1670.385 734.506 1701.942 679.625 1738.142 616.671 1826.826 577.32 1824.321 504.743 1821.857 433.35 1742.91 391.44399999999996 1690.326 343.091 1643.284 299.833 1595.862 256.02 1534.482 238.223 1473.223 220.461 1409.322 229.60500000000002 1347.088 243.57100000000003 1281.208 258.355 1202.667 265.578 1164.475 321.256 1126.314 376.889 1155.655 452.007 1157.8609999999999 519.434 1159.664 574.545 1152.459 630.707 1176.228 680.461 1199.781 729.763 1249.4850000000001 757.083 1289.281 794.523 1339.271 841.554 1372.261 917.5550000000001 1440 928.6179999999999' fill='%23f8dfd7'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1024'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
 	background-size: cover;
@@ -45,8 +45,9 @@ body{
 	width: 100%;
 	top: 0;
 	left: 0;
-	z-index: 1000;
-	-webkit-transition : all 0.3s ease-out;
+	z-index: 1;
+  background-color: rgba(27, 18, 18, 0.575);  
+  backdrop-filter: blur(5px);
 	transition : all 0.3s ease-out;
 }
 .navbar{
@@ -101,12 +102,14 @@ body{
 	border-color: transparent;
 }
 .nav-link{
-	color: #fff9f9 !important;
+	color: #dfdbdb !important;
 	font-weight: 500;
+  font-size: 110%;
+
     transition: all 200ms linear;
 }
 .nav-item:hover .nav-link{
-	color: #f393a0 !important;
+	color: #f7b5bd !important;
 }
 .nav-item.active .nav-link{
 	color: #777 !important;
@@ -363,7 +366,7 @@ body.nav-anim #switch{
 	margin: 0;
 	font-size: 13px;
 	letter-spacing: 1px;
-	color: #212121;
+	color: #1e1f20;
 	background-color: #fcfaff;
 	border: none;
 	border-radius: 3px;
@@ -404,7 +407,7 @@ body.dark p{
     transition-delay: 0ms !important;
 }
 body.dark .bg-light {
-	background-color: #14151a !important;
+  background-color: #1e1f20 !important;
 }
 body.dark .start-header {
 	box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.15);
@@ -413,7 +416,7 @@ body.dark .start-header.scroll-on {
 	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
 }
 body.dark .nav-link{
-	color: #fff !important;
+	color: rgb(248, 248, 248) !important;
 }
 body.dark .nav-item.active .nav-link{
 	color: #999 !important;
@@ -458,7 +461,7 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 		height: 1px;
 		content: "";
 		border: none;
-		background-color: #000;
+		background-color: #1e1f20;
 	}
 	.dropdown-toggle::after {
 		position: absolute;
@@ -469,7 +472,7 @@ body.dark .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 		height: 11px;
 		content: "";
 		border: none;
-		background-color: #000;
+		background-color: #1e1f20;
 		transition: all 200ms linear;
 	}
 	.dropdown-toggle[aria-expanded="true"]::after{
@@ -1163,7 +1166,7 @@ position: relative;
 	margin: 0;
 	font-size: 13px;
 	letter-spacing: 1px;
-	color: #212121;
+	color: #1e1f20;
 	background-color: #fcfaff !important;
 	border: none;
 	border-radius: 3px;
