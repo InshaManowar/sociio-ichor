@@ -109,7 +109,6 @@ def error_500(request, *args):
         return render(request,'home/500.html', data)
     
 
-
 def donor_form(request):
     form = DonorForm()
     if request.method == 'POST':
