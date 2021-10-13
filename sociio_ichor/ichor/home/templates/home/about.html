@@ -1,648 +1,663 @@
-{% extends 'home/base.html' %}
-{% load static %}
+{% extends 'home/base.html' %} {% load static %} {% block head %}
+<title>Sociio Ichor | About us</title>
+<link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="description" content="Sociio Ichor is a blood donation request platform which helps to connect patient with donors faster in India">
+<link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+<meta name="keywords" content="Sociio Ichor, about, about sociio ichor ">
 
-{% block head %}
-    <title>Sociio Ichor | About us</title>
-    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Titillium Web' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="description" content="Sociio Ichor is a blood donation request platform which helps to connect patient with donors faster in India">
-    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
-    <meta name="keywords" content="Sociio Ichor, about, about sociio ichor ">
-
-    <style type="text/css">
-      body{
-          overflow-x: hidden;
-      }
-       .ichor-p{
-            text-align: justify;
-            font-family: Lato;
-            color: white;
+<style type="text/css">
+    body {
+        overflow-x: hidden;
+    }
+    
+    .ichor-p {
+        text-align: justify;
+        font-family: Lato;
+        color: white;
+        font-size: 1rem !important;
+    }
+    
+    .ichor-p-head {
+        text-align: justify;
+        font-family: Lato;
+        color: white;
+        font-size: 1.2rem !important;
+    }
+    
+    .ichor-info-1 {
+        padding: 3%;
+        border-radius: 7px;
+        font-size: 2rem !important;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.568)), url(../../static/home/11.png);
+        background-position: center;
+        line-height: 100%;
+    }
+    
+    .ichor-info-2 {
+        padding: 3%;
+        border-radius: 7px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.692)), url(../../static/home/9.png);
+        background-position: center;
+        line-height: 150%;
+    }
+    
+    .ichor-info-3 {
+        padding: 3%;
+        border-radius: 7px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.692)), url(../../static/home/plasma.png);
+        background-position: center;
+        line-height: 150%;
+    }
+    
+    .ichor-points {
+        padding: 2%;
+        background-image: url(https://images.unsplash.com/photo-1566410845311-1201aefbee6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80);
+        background-size: cover;
+        display: table;
+        width: 100%;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        left: 0;
+    }
+    
+    .card-counter {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        margin: 5px;
+        padding: 20px 10px;
+        background-color: #fff;
+        height: 115px;
+        border-radius: 5px;
+        transition: .3s linear all;
+    }
+    
+    .card-counter:hover {
+        box-shadow: 4px 4px 20px #444444;
+        transition: .3s linear all;
+    }
+    
+    .card-counter.primary {
+        background-color: #d85f73;
+        color: #FFF;
+    }
+    
+    .card-counter.danger {
+        background-color: #bb5a6a;
+        color: #FFF;
+    }
+    
+    .card-counter.success {
+        background-color: #ad4758;
+        color: #FFF;
+    }
+    
+    .card-counter.info {
+        background-color: #af4456;
+        color: #FFF;
+    }
+    
+    .card-counter i {
+        font-size: 5em;
+        opacity: 0.2;
+    }
+    
+    .card-counter .count-numbers {
+        position: absolute;
+        right: 35px;
+        top: 20px;
+        font-size: 32px;
+        display: block;
+    }
+    
+    .card-counter .count-name {
+        position: absolute;
+        right: 35px;
+        top: 65px;
+        font-style: italic;
+        text-transform: capitalize;
+        opacity: 0.5;
+        display: block;
+        font-size: 18px;
+    }
+    
+    .ichor-title {
+        font-family: Oswald;
+        font-size: 7rem;
+        letter-spacing: 3px;
+        font-weight: 700;
+        color: rgb(13, 14, 13) !important;
+        text-shadow: 0px 2px 2px rgba(7, 3, 3, 0.4);
+    }
+    
+    .ichor-title span {
+        font-family: Oswald;
+        font-size: 7rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+        color: #CA4246;
+    }
+    
+    video {
+        border-radius: 7px !important;
+    }
+    
+    @media only screen and (max-width: 768px) {
+        .ichor-p {
+            font-size: 1rem;
+            padding: 3%;
+        }
+        .ichor-p-head {
+            font-size: 1rem;
+            padding: 3%;
+        }
+        .ichor-title {
+            font-size: 4rem !important;
+            padding: 3%;
+            margin-top: 12% !important;
+        }
+        .ichor-title span {
+            font-size: 4rem !important;
+            margin-top: 12% !important;
+        }
+        .ichor-info {
+            width: 90vw;
+        }
+        .ichor-points {
+            width: 98vw;
+        }
+        .ichor-points .card {
+            margin: 4%;
+        }
+        .ichor-points .card p {
             font-size: 1rem !important;
         }
-       .ichor-p-head{
-            text-align: justify;
-            font-family: Lato;
-            color: white;
-          
-            font-size: 1.2rem !important;
+        .ichor-counter {
+            width: 100vw;
         }
-        .ichor-info-1{
-            padding: 3%;
-            border-radius: 7px;
-            font-size: 2rem !important;
-            background-image:linear-gradient(rgba(0, 0, 0, 0.507), rgba(0, 0, 0, 0.568)), url(../../static/home/11.png);
-            background-position: center;
-            line-height: 100%;
-
+        video {
+            margin-top: 5%;
+            width: 300px
         }
-        .ichor-info-2{
-            padding: 3%;
-            border-radius: 7px;
-            background-image:linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.692)), url(../../static/home/9.png);
-            background-position: center;
-            line-height: 150%;
-
+    }
+    
+    @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
+    /* This pen */
+    
+    a,
+    a:hover {
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+    }
+    
+    #pageHeaderTitle {
+        margin: 2rem 0;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+    /* Cards */
+    
+    .postcard {
+        flex-wrap: wrap;
+        display: flex;
+        box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+        border-radius: 10px;
+        margin: 0 0 2rem 0;
+        overflow: hidden;
+        position: relative;
+        color: #ffffff;
+    }
+    
+    .postcard.dark {
+        background-color: #18151f;
+    }
+    
+    .postcard.light {
+        background-color: #ffffff;
+    }
+    
+    .postcard .t-dark {
+        color: #18151f;
+    }
+    
+    .postcard a {
+        color: inherit;
+    }
+    
+    .postcard h1,
+    .postcard .h1 {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    
+    .postcard .small {
+        font-size: 80%;
+    }
+    
+    .postcard .postcard__title {
+        font-size: 1.75rem;
+    }
+    
+    .postcard .postcard__img {
+        max-height: 180px;
+        width: 100%;
+        object-fit: cover;
+        position: relative;
+    }
+    
+    .postcard .postcard__img_link {
+        display: contents;
+    }
+    
+    .postcard .postcard__bar {
+        width: 50px;
+        height: 10px;
+        margin: 10px 0;
+        border-radius: 5px;
+        background-color: #424242;
+        transition: width 0.2s ease;
+    }
+    
+    .postcard .postcard__text {
+        padding: 1.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .postcard .postcard__preview-txt {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: justify;
+        height: 100%;
+    }
+    
+    .postcard .postcard__tagbox {
+        display: flex;
+        flex-flow: row wrap;
+        font-size: 14px;
+        margin: 20px 0 0 0;
+        padding: 0;
+        justify-content: center;
+    }
+    
+    .postcard .postcard__tagbox .tag__item {
+        display: inline-block;
+        background: rgba(83, 83, 83, 0.4);
+        border-radius: 3px;
+        padding: 2.5px 10px;
+        margin: 0 5px 5px 0;
+        cursor: default;
+        -webkit-user-select: none;
+        user-select: none;
+        transition: background-color 0.3s;
+    }
+    
+    .postcard .postcard__tagbox .tag__item:hover {
+        background: rgba(83, 83, 83, 0.8);
+    }
+    
+    .postcard:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: linear-gradient(-70deg, #424242, transparent 50%);
+        opacity: 1;
+        border-radius: 10px;
+    }
+    
+    .postcard:hover .postcard__bar {
+        width: 100px;
+    }
+    
+    @media screen and (min-width: 769px) {
+        .postcard {
+            flex-wrap: inherit;
         }
-        .ichor-info-3{
-            padding: 3%;
-            border-radius: 7px;
-            background-image:linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.692)), url(../../static/home/plasma.png);
-            background-position: center;
-            line-height: 150%;
-
+        .postcard .postcard__title {
+            font-size: 2rem;
         }
-        .ichor-points{
-            padding: 2%;
-            background-image: url(https://images.unsplash.com/photo-1566410845311-1201aefbee6a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1950&q=80);
-            background-size: cover;
-            display: table;
+        .postcard .postcard__tagbox {
+            justify-content: start;
+        }
+        .postcard .postcard__img {
+            max-width: 300px;
+            max-height: 100%;
+            transition: transform 0.3s ease;
+        }
+        .postcard .postcard__text {
+            padding: 3rem;
             width: 100%;
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            left: 0;
         }
-        .card-counter{
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-                        margin: 5px;
-    padding: 20px 10px;
-    background-color: #fff;
-    height: 115px;
-    border-radius: 5px;
-    transition: .3s linear all;
-  }
-
-  .card-counter:hover{
-    box-shadow: 4px 4px 20px #444444;
-    transition: .3s linear all;
-  }
-
-  .card-counter.primary{
-    background-color: #d85f73;
-    color: #FFF;
-  }
-
-  .card-counter.danger{
-    background-color: #bb5a6a;
-    color: #FFF;
-  }  
-
-  .card-counter.success{
-    background-color: #ad4758;
-    color: #FFF;
-  }  
-
-  .card-counter.info{
-    background-color: #af4456;
-    color: #FFF;
-  }  
-
-  .card-counter i{
-    font-size: 5em;
-    opacity: 0.2;
-  }
-
-  .card-counter .count-numbers{
-    position: absolute;
-    right: 35px;
-    top: 20px;
-    font-size: 32px;
-    display: block;
-  }
-
-  .card-counter .count-name{
-    position: absolute;
-    right: 35px;
-    top: 65px;
-    font-style: italic;
-    text-transform: capitalize;
-    opacity: 0.5;
-    display: block;
-    font-size: 18px;
-  }
-  .ichor-title{
-      font-family:Oswald;
-      font-size: 7rem;
-      letter-spacing: 3px;
-      font-weight: 700;
-      color: rgb(13, 14, 13) !important;
-      text-shadow: 0px 2px 2px rgba(7, 3, 3, 0.4); 
-      
-  }
-  .ichor-title span{
-      font-family:Oswald;
-      font-size: 7rem;
-      letter-spacing: 2px;
-      font-weight: 700;
-  color: #CA4246;
-  
-  }
- video{
-  border-radius: 7px !important;
-}
-  @media only screen and (max-width: 768px){
-      .ichor-p{
-          font-size: 1rem;
-          padding: 3%;
-      }
-      .ichor-p-head{
-          font-size: 1rem;
-          padding: 3%;
-      }
-      .ichor-title{
-          font-size: 4rem !important;
-          padding: 3%;
-          margin-top:12% !important;
-      }
-      .ichor-title span{
-          font-size: 4rem !important;
-          margin-top:12% !important;
-      }
-      .ichor-info{
-          width: 90vw;
-      }
-      .ichor-points{
-          width: 98vw;
-      }
-      .ichor-points .card{
-
-        margin: 4%;
-      }
-      .ichor-points .card p{
-
+        .postcard .media.postcard__text:before {
+            content: "";
+            position: absolute;
+            display: block;
+            background: #18151f;
+            top: -20%;
+            height: 130%;
+            width: 55px;
+        }
+        .postcard:hover .postcard__img {
+            transform: scale(1.1);
+        }
+        .postcard:nth-child(2n+1) {
+            flex-direction: row;
+        }
+        .postcard:nth-child(2n+0) {
+            flex-direction: row-reverse;
+        }
+        .postcard:nth-child(2n+1) .postcard__text::before {
+            left: -12px !important;
+            transform: rotate(4deg);
+        }
+        .postcard:nth-child(2n+0) .postcard__text::before {
+            right: -12px !important;
+            transform: rotate(-4deg);
+        }
+    }
+    
+    @media screen and (min-width: 1024px) {
+        .postcard__text {
+            padding: 2rem 3.5rem;
+        }
+        .postcard__text:before {
+            content: "";
+            position: absolute;
+            display: block;
+            top: -20%;
+            height: 130%;
+            width: 55px;
+        }
+        .postcard.dark .postcard__text:before {
+            background: #18151f;
+        }
+        .postcard.light .postcard__text:before {
+            background: #ffffff;
+        }
+    }
+    /* COLORS */
+    
+    .postcard .postcard__tagbox .green.play:hover {
+        background: #79dd09;
+        color: black;
+    }
+    
+    .green .postcard__title:hover {
+        color: #79dd09;
+    }
+    
+    .green .postcard__bar {
+        background-color: #79dd09;
+    }
+    
+    .green::before {
+        background-image: linear-gradient(-30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+    }
+    
+    .green:nth-child(2n)::before {
+        background-image: linear-gradient(30deg, rgba(121, 221, 9, 0.1), transparent 50%);
+    }
+    
+    .postcard .postcard__tagbox .blue.play:hover {
+        background: #0076bd;
+    }
+    
+    .blue .postcard__title:hover {
+        color: #0076bd;
+    }
+    
+    .blue .postcard__bar {
+        background-color: #0076bd;
+    }
+    
+    .blue::before {
+        background-image: linear-gradient(-30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+    }
+    
+    .blue:nth-child(2n)::before {
+        background-image: linear-gradient(30deg, rgba(0, 118, 189, 0.1), transparent 50%);
+    }
+    
+    .postcard .postcard__tagbox .red.play:hover {
+        background: #bd150b;
+    }
+    
+    .red .postcard__title:hover {
+        color: #bd150b;
+    }
+    
+    .red .postcard__bar {
+        background-color: #bd150b;
+    }
+    
+    .red::before {
+        background-image: linear-gradient(-30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+    }
+    
+    .red:nth-child(2n)::before {
+        background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1), transparent 50%);
+    }
+    
+    .postcard .postcard__tagbox .yellow.play:hover {
+        background: #bdbb49;
+        color: black;
+    }
+    
+    .yellow .postcard__title:hover {
+        color: #bdbb49;
+    }
+    
+    .yellow .postcard__bar {
+        background-color: #bdbb49;
+    }
+    
+    .yellow::before {
+        background-image: linear-gradient(-30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+    }
+    
+    .yellow:nth-child(2n)::before {
+        background-image: linear-gradient(30deg, rgba(189, 187, 73, 0.1), transparent 50%);
+    }
+    
+    @media screen and (min-width: 769px) {
+        .green::before {
+            background-image: linear-gradient(-80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+        }
+        .green:nth-child(2n)::before {
+            background-image: linear-gradient(80deg, rgba(121, 221, 9, 0.1), transparent 50%);
+        }
+        .blue::before {
+            background-image: linear-gradient(-80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+        }
+        .blue:nth-child(2n)::before {
+            background-image: linear-gradient(80deg, rgba(0, 118, 189, 0.1), transparent 50%);
+        }
+        .red::before {
+            background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+        }
+        .red:nth-child(2n)::before {
+            background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1), transparent 50%);
+        }
+        .yellow::before {
+            background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+        }
+        .yellow:nth-child(2n)::before {
+            background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
+        }
+    }
+    
+    .header-bg {
+        background-color: #d9e4f5;
+        background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+    }
+    
+    p {
         font-size: 1rem !important;
-      }
-
-      .ichor-counter{
-          width: 100vw;
-      }
-      video{
-        margin-top: 5%;
-        width:300px
-      }
-  }
-  @import url("https://fonts.googleapis.com/css2?family=Baloo+2&display=swap");
-/* This pen */
-
-
-a, a:hover {
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-#pageHeaderTitle {
-  margin: 2rem 0;
-  text-transform: uppercase;
-  text-align: center;
-  font-size: 2.5rem;
-}
-
-/* Cards */
-.postcard {
-  flex-wrap: wrap;
-  display: flex;
-  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
-  border-radius: 10px;
-  margin: 0 0 2rem 0;
-  overflow: hidden;
-  position: relative;
-  color: #ffffff;
-}
-.postcard.dark {
-  background-color: #18151f;
-}
-.postcard.light {
-  background-color: #ffffff;
-}
-.postcard .t-dark {
-  color: #18151f;
-}
-.postcard a {
-  color: inherit;
-}
-.postcard h1, .postcard .h1 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
-}
-.postcard .small {
-  font-size: 80%;
-}
-.postcard .postcard__title {
-  font-size: 1.75rem;
-}
-.postcard .postcard__img {
-  max-height: 180px;
-  width: 100%;
-  object-fit: cover;
-  position: relative;
-}
-.postcard .postcard__img_link {
-  display: contents;
-}
-.postcard .postcard__bar {
-  width: 50px;
-  height: 10px;
-  margin: 10px 0;
-  border-radius: 5px;
-  background-color: #424242;
-  transition: width 0.2s ease;
-}
-.postcard .postcard__text {
-  padding: 1.5rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-.postcard .postcard__preview-txt {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: justify;
-  height: 100%;
-}
-.postcard .postcard__tagbox {
-  display: flex;
-  flex-flow: row wrap;
-  font-size: 14px;
-  margin: 20px 0 0 0;
-  padding: 0;
-  justify-content: center;
-}
-.postcard .postcard__tagbox .tag__item {
-  display: inline-block;
-  background: rgba(83, 83, 83, 0.4);
-  border-radius: 3px;
-  padding: 2.5px 10px;
-  margin: 0 5px 5px 0;
-  cursor: default;
-  -webkit-user-select: none;
-          user-select: none;
-  transition: background-color 0.3s;
-}
-.postcard .postcard__tagbox .tag__item:hover {
-  background: rgba(83, 83, 83, 0.8);
-}
-.postcard:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient(-70deg, #424242, transparent 50%);
-  opacity: 1;
-  border-radius: 10px;
-}
-.postcard:hover .postcard__bar {
-  width: 100px;
-}
-
-@media screen and (min-width: 769px) {
-  .postcard {
-    flex-wrap: inherit;
-  }
-  .postcard .postcard__title {
-    font-size: 2rem;
-  }
-  .postcard .postcard__tagbox {
-    justify-content: start;
-  }
-  .postcard .postcard__img {
-    max-width: 300px;
-    max-height: 100%;
-    transition: transform 0.3s ease;
-  }
-  .postcard .postcard__text {
-    padding: 3rem;
-    width: 100%;
-  }
-  .postcard .media.postcard__text:before {
-    content: "";
-    position: absolute;
-    display: block;
-    background: #18151f;
-    top: -20%;
-    height: 130%;
-    width: 55px;
-  }
-  .postcard:hover .postcard__img {
-    transform: scale(1.1);
-  }
-  .postcard:nth-child(2n+1) {
-    flex-direction: row;
-  }
-  .postcard:nth-child(2n+0) {
-    flex-direction: row-reverse;
-  }
-  .postcard:nth-child(2n+1) .postcard__text::before {
-    left: -12px !important;
-    transform: rotate(4deg);
-  }
-  .postcard:nth-child(2n+0) .postcard__text::before {
-    right: -12px !important;
-    transform: rotate(-4deg);
-  }
-}
-@media screen and (min-width: 1024px) {
-  .postcard__text {
-    padding: 2rem 3.5rem;
-  }
-
-  .postcard__text:before {
-    content: "";
-    position: absolute;
-    display: block;
-    top: -20%;
-    height: 130%;
-    width: 55px;
-  }
-
-  .postcard.dark .postcard__text:before {
-    background: #18151f;
-  }
-
-  .postcard.light .postcard__text:before {
-    background: #ffffff;
+    }
     
-  }
-}
-/* COLORS */
-.postcard .postcard__tagbox .green.play:hover {
-  background: #79dd09;
-  color: black;
-}
+    .text-red {
+        color: #ad4758;
+        font-weight: 700;
+    }
+</style>
+{% endblock head %} {% block content %}
 
-.green .postcard__title:hover {
-  color: #79dd09;
-}
+<div class="container-fluid header-bg">
 
-.green .postcard__bar {
-  background-color: #79dd09;
-}
-
-.green::before {
-  background-image: linear-gradient(-30deg, rgba(121, 221, 9, 0.1), transparent 50%);
-}
-
-.green:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, rgba(121, 221, 9, 0.1), transparent 50%);
-}
-
-.postcard .postcard__tagbox .blue.play:hover {
-  background: #0076bd;
-}
-
-.blue .postcard__title:hover {
-  color: #0076bd;
-}
-
-.blue .postcard__bar {
-  background-color: #0076bd;
-}
-
-.blue::before {
-  background-image: linear-gradient(-30deg, rgba(0, 118, 189, 0.1), transparent 50%);
-}
-
-.blue:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, rgba(0, 118, 189, 0.1), transparent 50%);
-}
-
-.postcard .postcard__tagbox .red.play:hover {
-  background: #bd150b;
-}
-
-.red .postcard__title:hover {
-  color: #bd150b;
-}
-
-.red .postcard__bar {
-  background-color: #bd150b;
-}
-
-.red::before {
-  background-image: linear-gradient(-30deg, rgba(189, 21, 11, 0.1), transparent 50%);
-}
-
-.red:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, rgba(189, 21, 11, 0.1), transparent 50%);
-}
-
-.postcard .postcard__tagbox .yellow.play:hover {
-  background: #bdbb49;
-  color: black;
-}
-
-.yellow .postcard__title:hover {
-  color: #bdbb49;
-}
-
-.yellow .postcard__bar {
-  background-color: #bdbb49;
-}
-
-.yellow::before {
-  background-image: linear-gradient(-30deg, rgba(189, 187, 73, 0.1), transparent 50%);
-}
-
-.yellow:nth-child(2n)::before {
-  background-image: linear-gradient(30deg, rgba(189, 187, 73, 0.1), transparent 50%);
-}
-
-@media screen and (min-width: 769px) {
-  .green::before {
-    background-image: linear-gradient(-80deg, rgba(121, 221, 9, 0.1), transparent 50%);
-  }
-
-  .green:nth-child(2n)::before {
-    background-image: linear-gradient(80deg, rgba(121, 221, 9, 0.1), transparent 50%);
-  }
-
-  .blue::before {
-    background-image: linear-gradient(-80deg, rgba(0, 118, 189, 0.1), transparent 50%);
-  }
-
-  .blue:nth-child(2n)::before {
-    background-image: linear-gradient(80deg, rgba(0, 118, 189, 0.1), transparent 50%);
-  }
-
-  .red::before {
-    background-image: linear-gradient(-80deg, rgba(189, 21, 11, 0.1), transparent 50%);
-  }
-
-  .red:nth-child(2n)::before {
-    background-image: linear-gradient(80deg, rgba(189, 21, 11, 0.1), transparent 50%);
-  }
-
-  .yellow::before {
-    background-image: linear-gradient(-80deg, rgba(189, 187, 73, 0.1), transparent 50%);
-  }
-
-  .yellow:nth-child(2n)::before {
-    background-image: linear-gradient(80deg, rgba(189, 187, 73, 0.1), transparent 50%);
-  }
-
-}
-.header-bg{
-  background-color: #d9e4f5;
-background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
-}
-p{
-  font-size: 1rem !important;
-}
-
-.text-red{
-  color: #ad4758;
-  font-weight: 700;
-}
-    </style>
-{% endblock head %}
-    
-
-
-{% block content %}
-  
-  <div class="container-fluid header-bg">
-    
-<span class="container ichor-about-body">
+    <span class="container ichor-about-body">
   <h1  style="margin-top: 7%; "class="display-1 text-center ichor-title">About <span>us</span> </h1>
-</span>
+    </span>
 
-<div class="container ichor-info-1">
+    <div class="container ichor-info-1">
 
-  <p class="lead ichor-p-head">
-    There has always been neglect in blood donation, causing a shortage in every locality, leading to gazillion lives being lost every day. We aim to instil blood donation into the lifestyle of every healthy individual in India and believe that any life can be saved if connected with the right person at the right time. This can also solve the vital issue of the supply-demand gap and prevent blood scarcity.
-    
-  </p>
-</div>
+        <p class="lead ichor-p-head">
+            There has always been neglect in blood donation, causing a shortage in every locality, leading to gazillion lives being lost every day. We aim to instil blood donation into the lifestyle of every healthy individual in India and believe that any life can
+            be saved if connected with the right person at the right time. This can also solve the vital issue of the supply-demand gap and prevent blood scarcity.
 
-<div class="container-fluid ichor-points my-5 ">
-
-  <div class="row">
-      <div class="col-lg-3">
-          <div class="card">
-              <i class="fa fa-tint  px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center">Every day <span class="text-red">12,000</span> people die due to blood shortage.</p>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="card">
-              <i class="fa fa-child px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center">Innumerous <span class="text-red">myths</span> surrounding blood donation.</p>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="card">
-              <i class="fa fa-paper-plane  px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center"><span class="text-red">Gazillion</span> untargeted messages on social media.</p>
-          </div>
-      </div>
-      <div class="col-lg-3">
-          <div class="card">
-              <i class="fa fa-stethoscope  px-3 text-center py-3" style="font-size:48px;"></i>
-              <p class="lead px-3 my-3 text-center">Roughly <span class="text-red"> 4100</span> units of blood get wasted everyday.</p>
-          </div>
-      </div>
-  </div>
-
-</div>
-<span class="container">
-  <h1 class="display-2 text-center ichor-title"><span>Our</span> Story</h1>
-</span>
-<div class="container ichor-story my-5">
-
-
-<div class="row">
-  <div class="col-lg-6 ichor-counter">
-      <div class="row">
-          <div class="col-lg-6">
-              <div class="card-counter primary">
-                <i class="fa fa-handshake-o"></i>
-                <span class="count-numbers">300+</span>
-                <span class="count-name">Donors</span>
-              </div>
-            </div>
-        
-            <div class="col-lg-6">
-              <div class="card-counter danger">
-                <i class="fa fa-hospital-o"></i>
-                <span class="count-numbers">1000+</span>
-                <span class="count-name">Patients</span>
-              </div>
-            </div>
-         </div>
-      
-          <div class="row">
-              <div class="col-lg-6">
-                  <div class="card-counter success">
-                    <i class="fa fa-thumb-tack"></i>
-                    <span class="count-numbers">250+</span>
-                    <span class="count-name">Matches</span>
-                  </div>
-                </div>
-            
-                <div class="col-lg-6">
-                  <div class="card-counter info">
-                    <i class="fa fa-users"></i>
-                    <span class="count-numbers">7</span>
-                    <span class="count-name">Team Members</span>
-                  </div>
-                </div>
-          </div>
+        </p>
     </div>
-     <div class="col-lg-6 ichor-info-2 d-none d-lg-block ">
-              <p class="lead ichor-p" style="margin-top: 2%;">
-                It started with the need for platelets by one of our teammate’s volunteers. His sister was pregnant and was in dire need of platelets. Even after searching everywhere, it led to no avail. After our teammate learned of their situation, he offered to donate. But by the time he was able to get his compatibility test done, the patient had passed away along with the newborn. This stirred up a whirlpool of emotions among us and led to the beginning of Sociio Ichor.
-              </p>
-          </div>
-      </div>
-     </div>
-     <div class="phone-text container d-lg-none">
-       <p class="lead text-justify">                It started with the need for platelets by one of our teammate’s volunteers. His sister was pregnant and was in dire need of platelets. Even after searching everywhere, it led to no avail. After our teammate learned of their situation, he offered to donate. But by the time he was able to get his compatibility test done, the patient had passed away along with the newborn. This stirred up a whirlpool of emotions among us and led to the beginning of Sociio Ichor.
-      </p>
-     </div>
-     <div class="container ichor-video my-3 ">
-       <div class="row">
-         <div class="col-lg-6 ichor-info-3 d-none d-lg-block">
-           <p class=" lead ichor-p" style="margin-top: 7%;">
-            With the second wave of COVID-19 hitting India hard, there have been many difficulties in reaching out to people. It has become difficult to treat the patients who tested positive with COVID-19 due to the lack of plasma donations. The communication gap between the patients and the donors has become increasingly problematic, which we at Sociio, under the project ICHOR, intend to improve. We hope to be able to connect the struggling patients with compatible donors and bring the rising state of Covid under control.
-           </p>
-         </div>
-         <div class="col-lg-6 vid" >
-          <video src="{% static 'home/ichor.mp4' %}" autoplay width="550"  controls ></video>
 
-         </div>
-       </div>
+    <div class="container-fluid ichor-points my-5 ">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="card">
+                    <i class="fa fa-tint  px-3 text-center py-3" style="font-size:48px;"></i>
+                    <p class="lead px-3 my-3 text-center">Every day <span class="text-red">12,000</span> people die due to blood shortage.</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <i class="fa fa-child px-3 text-center py-3" style="font-size:48px;"></i>
+                    <p class="lead px-3 my-3 text-center">Innumerous <span class="text-red">myths</span> surrounding blood donation.</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <i class="fa fa-paper-plane  px-3 text-center py-3" style="font-size:48px;"></i>
+                    <p class="lead px-3 my-3 text-center"><span class="text-red">Gazillion</span> untargeted messages on social media.</p>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="card">
+                    <i class="fa fa-stethoscope  px-3 text-center py-3" style="font-size:48px;"></i>
+                    <p class="lead px-3 my-3 text-center">Roughly <span class="text-red"> 4100</span> units of blood get wasted everyday.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <span class="container">
+  <h1 class="display-2 text-center ichor-title"><span>Our</span> Story</h1>
+    </span>
+    <div class="container ichor-story my-5">
+
+
+        <div class="row">
+            <div class="col-lg-6 ichor-counter">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card-counter primary">
+                            <i class="fa fa-handshake-o"></i>
+                            <span class="count-numbers">300+</span>
+                            <span class="count-name">Donors</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card-counter danger">
+                            <i class="fa fa-hospital-o"></i>
+                            <span class="count-numbers">1000+</span>
+                            <span class="count-name">Patients</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card-counter success">
+                            <i class="fa fa-thumb-tack"></i>
+                            <span class="count-numbers">250+</span>
+                            <span class="count-name">Matches</span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="card-counter info">
+                            <i class="fa fa-users"></i>
+                            <span class="count-numbers">7</span>
+                            <span class="count-name">Team Members</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 ichor-info-2 d-none d-lg-block ">
+                <p class="lead ichor-p" style="margin-top: 2%;">
+                    It started with the need for platelets by one of our teammate’s volunteers. His sister was pregnant and was in dire need of platelets. Even after searching everywhere, it led to no avail. After our teammate learned of their situation, he offered to donate.
+                    But by the time he was able to get his compatibility test done, the patient had passed away along with the newborn. This stirred up a whirlpool of emotions among us and led to the beginning of Sociio Ichor.
+                    <div class="text-center"> <a class="text-red-2 blink-soft" href="{% url 'home:donor' %}">Register as a donor now</a>
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="phone-text container d-lg-none">
+        <p class="lead text-justify"> It started with the need for platelets by one of our teammate’s volunteers. His sister was pregnant and was in dire need of platelets. Even after searching everywhere, it led to no avail. After our teammate learned of their situation, he offered
+            to donate. But by the time he was able to get his compatibility test done, the patient had passed away along with the newborn. This stirred up a whirlpool of emotions among us and led to the beginning of Sociio Ichor. You can also do your
+            bit by <a style="color: black; font-weight: 800;" href="{% url 'home:donor' %}">donating blood.</a>
+        </p>
+    </div>
+    <div class="container ichor-video my-3 ">
+        <div class="row">
+            <div class="col-lg-6 ichor-info-3 d-none d-lg-block">
+                <p class=" lead ichor-p" style="margin-top: 7%;">
+                    With the second wave of COVID-19 hitting India hard, there have been many difficulties in reaching out to people. It has become difficult to treat the patients who tested positive with COVID-19 due to the lack of plasma donations. The communication gap
+                    between the patients and the donors has become increasingly problematic, which we at Sociio, under the project ICHOR, intend to improve. We hope to be able to connect the struggling patients with compatible donors and bring the rising
+                    state of Covid under control.
+                </p>
+            </div>
+            <div class="col-lg-6 vid">
+                <video muted src="{% static 'home/ichor.mp4' %}" autoplay width="550" controls></video>
+
+            </div>
+        </div>
     </div>
 
     <span class="container my-4">
       <h1 class="display-2 text-center ichor-title" style="margin-top: 5%;">We make <span>headlines</span></h1>
-  </span>
+    </span>
 
-    <section style="margin-top: 5%;" >
-      <div class="container py-2">
-        <article class="postcard light red">
-          <a class="postcard__img_link" href="#">
-            <img class="postcard__img" src="https://images.indianexpress.com/2020/12/blood-donor.jpg" alt="Image Title" />	
-          </a>
-          <div class="postcard__text t-dark">
-            <h1 class="postcard__title red"><a href="https://timesofindia.indiatimes.com/city/mangaluru/manipal-students-connect-plasma-donors-with-patients/articleshow/82327357.cms">Manipal students connect plasma donors with patients - <i class="text-muted">Times of India </i></a></h1>
-            <div class="postcard__subtitle small">
-              <time datetime="2020-05-25 12:00:00">
+    <section style="margin-top: 5%;">
+        <div class="container py-2">
+            <article class="postcard light red">
+                <a class="postcard__img_link" href="#">
+                    <img class="postcard__img" src="https://images.indianexpress.com/2020/12/blood-donor.jpg" alt="Image Title" />
+                </a>
+                <div class="postcard__text t-dark">
+                    <h1 class="postcard__title red"><a href="https://timesofindia.indiatimes.com/city/mangaluru/manipal-students-connect-plasma-donors-with-patients/articleshow/82327357.cms">Manipal students connect plasma donors with patients - <i class="text-muted">Times of India </i></a></h1>
+                    <div class="postcard__subtitle small">
+                        <time datetime="2020-05-25 12:00:00">
                 <i class="fas fa-calendar-alt mr-2"></i>April 30, 2021
               </time>
-            </div>
-            <div class="postcard__bar"></div>
-            <div class="postcard__preview-txt">Manipal students connect plasma donors with patients. A month ago, the Manipal Institute of Technology (MIT ) campus was declared a containment zone, and gradually around 1,000 Covid-19 cases were reported from the campus. It had been a difficult phase for the students, but now, many have come forward to lend a helping hand to those suffering due to the pandemic.</div>
-          
-          </div>
-        </article>
-        <article class="postcard light blue">
-          <a class="postcard__img_link" href="https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2021/04/30/convalescent-plasma-reuters-948249-1612608664-980808-1619779282.jpg?itok=22pQUN7-">
-            <img class="postcard__img" src="https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2021/04/30/convalescent-plasma-reuters-948249-1612608664-980808-1619779282.jpg?itok=22pQUN7-" alt="Image Title" />
-          </a>
-          <div class="postcard__text t-dark">
-            <h1 class="postcard__title blue"><a href="https://www.deccanherald.com/state/project-ichor-to-connect-patients-in-need-of-plasma-with-donors-980808.html">Project Ichor to connect patients in need of plasma with donors
+                    </div>
+                    <div class="postcard__bar"></div>
+                    <div class="postcard__preview-txt">Manipal students connect plasma donors with patients. A month ago, the Manipal Institute of Technology (MIT ) campus was declared a containment zone, and gradually around 1,000 Covid-19 cases were reported from the campus. It had been
+                        a difficult phase for the students, but now, many have come forward to lend a helping hand to those suffering due to the pandemic.</div>
+
+                </div>
+            </article>
+            <article class="postcard light blue">
+                <a class="postcard__img_link" href="https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2021/04/30/convalescent-plasma-reuters-948249-1612608664-980808-1619779282.jpg?itok=22pQUN7-">
+                    <img class="postcard__img" src="https://www.deccanherald.com/sites/dh/files/styles/article_detail/public/articleimages/2021/04/30/convalescent-plasma-reuters-948249-1612608664-980808-1619779282.jpg?itok=22pQUN7-" alt="Image Title" />
+                </a>
+                <div class="postcard__text t-dark">
+                    <h1 class="postcard__title blue"><a href="https://www.deccanherald.com/state/project-ichor-to-connect-patients-in-need-of-plasma-with-donors-980808.html">Project Ichor to connect patients in need of plasma with donors
               - <i class="text-muted">Deccan Herald</i>
               </h1>
             <div class="postcard__subtitle small">
@@ -657,31 +672,31 @@ p{
               
 
              </a> </div>
-          
-          </div>
+
+        </div>
         </article>
-    
+
         <article class="postcard light green">
-          <a class="postcard__img_link" href="#">
-            <img class="postcard__img" src="https://theasianchronicle.com/wp-content/uploads/2021/04/navbharat-times.jpg" alt="Image Title" />
-          </a>
-          <div class="postcard__text t-dark">
-            <h1 class="postcard__title green"><a href="https://theasianchronicle.com/sociio-bridge-between-plasma-donors-and-receivers/">‘Sociio’ bridge between Plasma donors and receivers - <i class="text-muted">The Asian Chronicles</i></a></h1>
-            <div class="postcard__subtitle small">
-              <time datetime="2020-05-25 12:00:00">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" src="https://theasianchronicle.com/wp-content/uploads/2021/04/navbharat-times.jpg" alt="Image Title" />
+            </a>
+            <div class="postcard__text t-dark">
+                <h1 class="postcard__title green"><a href="https://theasianchronicle.com/sociio-bridge-between-plasma-donors-and-receivers/">‘Sociio’ bridge between Plasma donors and receivers - <i class="text-muted">The Asian Chronicles</i></a></h1>
+                <div class="postcard__subtitle small">
+                    <time datetime="2020-05-25 12:00:00">
                 <i class="fas fa-calendar-alt mr-2"></i>April 27, 2021
               </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">
+                    To battle, this pandemic, controlling the spread and recovery are the key points. The former may not always be within our control at times, but the latter indeed is. Donating plasma is a crucial step in controlling the pandemic. Sociio Ichor has ensured
+                    it is done most safely and efficiently by providing people with a platform to connect.</div>
+
             </div>
-            <div class="postcard__bar"></div>
-            <div class="postcard__preview-txt">
-              To battle, this pandemic, controlling the spread and recovery are the key points. The former may not always be within our control at times, but the latter indeed is. Donating plasma is a crucial step in controlling the pandemic. Sociio Ichor has ensured it is done most safely and efficiently by providing people with a platform to connect.</div>
-         
-          </div>
         </article>
-        
-      </div>
-    </section>
-  </div>
-  
+
+</div>
+</section>
+</div>
+
 {% endblock content %}
-    
