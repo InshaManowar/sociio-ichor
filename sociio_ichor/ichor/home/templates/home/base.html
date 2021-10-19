@@ -49,7 +49,7 @@
                                     <a class="nav-link" href="{% url 'home:land' %}">Home</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                    <a class="nav-link" href="{% url 'home:donate' %}">Donate Now</a>
+                                    <a class="nav-link" href="{% url 'home:donate' %}">Live Request</a>
                                 </li>
                                 <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                     <a class="nav-link" href="{% url 'home:about' %}">About Us</a>
@@ -114,7 +114,7 @@
                         <!-- <li><a href="{% url 'home:land' %}">Home</a></li> -->
                         <li><a href="{%  url 'home:donate' %}">Donate Blood</a></li>
                         <li><a href="{%  url 'home:contact' %}">Contact us</a></li>
-                        <li><a class="text-red blink-soft" href="{% url 'home:donor' %}">Register as donor</a></li>
+                        <li><a href="{% url 'home:donor' %}">Register as donor</a></li>
                         <li><a href="{% url 'newsletter:letter-index' %}">Subscribe to newsletter</a></li>
                         <!-- <li><a href="{% url 'home:privacy' %}">Privacy Policy</a></li> -->
                     </ul>
@@ -127,6 +127,8 @@
                 <div class="col-md-8 col-sm-6 col-xs-12">
                     <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
                         <a href="{% url 'home:land' %}">Sociio Ichor</a>.
+                        <br>
+                        <a href="{% url 'newsletter:unsubscribe' %}">Unsubscribe from mailing list</a>
                     </p>
                 </div>
             </div>

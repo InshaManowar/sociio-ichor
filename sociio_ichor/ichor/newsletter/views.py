@@ -50,3 +50,24 @@ def mail_letter(request):
         'form': form,
     }
     return render(request, 'newsletter/mail_letter.html', context)
+
+def newsletter_unsubscribe(request):
+    form = SubscibersForm(request.POST or None)
+    emailx=''
+    if request.method =='POST':
+
+
+        emailx=request.POST['email']
+    
+    if Subscribers.objects.filter(email=emailx).exists():
+        Subscribers.objects.filter(email=emailx).delete()
+        
+    else:
+        print('no email found')
+            
+    context= {
+                'form':form
+            }
+    template='newsletter/unsub.html'
+    return render(request, template, context)
+

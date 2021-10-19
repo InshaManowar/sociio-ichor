@@ -49,3 +49,4 @@ class BlogContent(models.Model):
     caption_image = models.CharField(max_length=255, default='', blank=True)
     
 
+
