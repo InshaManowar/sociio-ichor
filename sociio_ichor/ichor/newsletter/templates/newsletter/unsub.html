@@ -1,6 +1,6 @@
 {% extends "home/base.html" %} {% block head %}
 <style>
-    button {
+    .unsub {
         background-color: rgb(255, 13, 106) !important;
         border: 2px solid white !important;
     }
@@ -16,11 +16,13 @@
 
 
 <div class="container" style="margin: auto; margin-top: 15%; margin-bottom: 15%;">
-    <h1>To unsubscribe from our mailing list, please enter your email</h1>
+    <div class="d-lg-none" style="height: 100px;"></div>
+
+    <h1> To unsubscribe from our mailing list, please enter your email</h1>
     <form method="post" class="form-group text-center" style="margin-top: 10%;">
         {% csrf_token %} {{form}}
         <br>
-        <button class="btn btn-info btn-small" type="submit">Unsubscribe</button>
+        <button class="btn unsub btn-info btn-small" type="submit">Unsubscribe</button>
     </form>
 </div>
 {% endblock content %}
