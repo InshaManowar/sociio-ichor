@@ -11,8 +11,7 @@ class BlogAdmin(admin.ModelAdmin):
     list_display = ('author', 'publish_date', 'title')
     list_filter = ('title', 'author')
     prepopulated_fields={'slug':('title',)}
-    inlines = [BlogContentAdmin]
-    
+    inlines = [BlogContentAdmin]    
 
 @admin.register(BlogContent)
 class BlogContentAdmin(admin.ModelAdmin):
